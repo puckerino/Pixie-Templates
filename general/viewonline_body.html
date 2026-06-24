@@ -1,1 +1,35 @@
+<main class="viewonline_body">
+  <h2 class="page-title">{TOTAL_REGISTERED_USERS_ONLINE}</h2>
+  <h3 class="page-subtitle">{TOTAL_GUEST_USERS_ONLINE}</h3>
+  <article class="topic-actions topic-actions-top">{L_ONLINE_EXPLAIN}</article>
+  <section class="stack column has-spacing">
+    <menu class="stack column">
+      
+      <!-- BEGIN reg_user_row -->
+      <li class="grid-3 list-item">
+        <a class="username" href="{reg_user_row.U_USER_PROFILE}">{reg_user_row.USERNAME}</a>
+        <time>{reg_user_row.LASTUPDATE}</time>
+        <a href="{reg_user_row.U_FORUM_LOCATION}">{reg_user_row.FORUM_LOCATION}</a>
+      </li>
+      <!-- END reg_user_row -->
+      
+      <!-- BEGIN bot_user_row -->
+      <li class="grid-3 list-item">
+        <span class="username">{bot_user_row.USERNAME}</span>
+        <time>{bot_user_row.LASTUPDATE}</time>
+        <a href="{bot_user_row.U_FORUM_LOCATION}">{bot_user_row.FORUM_LOCATION}</a>
+      </li>
+      <!-- END bot_user_row -->
+      
+      <!-- BEGIN guest_user_row -->
+      <li class="grid-3 list-item">
+        <span class="username">{guest_user_row.USERNAME}</span>
+        <time>{guest_user_row.LASTUPDATE}</time>
+        <a href="{guest_user_row.U_FORUM_LOCATION}">{guest_user_row.FORUM_LOCATION}</a>
+      </li>
+      <!-- END guest_user_row -->
+    </menu>
+  </section>
+</main>
+
 
