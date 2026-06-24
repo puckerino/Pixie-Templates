@@ -1,0 +1,159 @@
+<main class="viewtopic_body">
+
+    <h2 class="page-title"><a href="{TOPIC_URL}">{TOPIC_TITLE}</a></h2>
+
+    <menu class="topic-actions topic-actions-top">
+
+        <!-- BEGIN switch_user_authpost -->
+        <li>
+            <a class="button" href="{U_POST_NEW_TOPIC}" rel="nofollow">NUEVO TEMA</a>
+        </li>
+        <!-- END switch_user_authpost -->
+
+        <li class="watchtopic">{S_WATCH_TOPIC}</li>
+
+        <!-- BEGIN switch_user_authreply -->
+        <li>
+            <a class="button" href="{U_POST_REPLY_TOPIC}">RESPONDER</a>
+        </li>
+        <!-- END switch_user_authreply -->
+
+    </menu>
+
+    <article class="pagination pagination-top">
+        {PAGE_NUMBER}
+        <!-- BEGIN topicpagination -->
+        {PAGINATION}
+        <!-- END topicpagination -->
+    </article>
+    <section class="stack column has-spacing">
+
+        {POLL_DISPLAY}
+
+        <!-- BEGIN postrow -->
+        <!-- BEGIN displayed -->
+        <a href="{postrow.displayed.POST_URL}"></a>
+        <article id="p{postrow.displayed.U_POST_ID}"
+            class="post post--{postrow.displayed.U_POST_ID} {postrow.displayed.GROUP}">
+
+            <section class="postbody">
+
+                <section class="postheader">
+                    <hgroup>
+                        <h2 class="username">
+                            {postrow.displayed.POSTER_NAME}
+                        </h2>
+                        <article class="rank">
+                            {postrow.displayed.POSTER_RANK_NEW}
+                        </article>
+                    </hgroup>
+                    <div data-profile-render-value="imagen-post"></div>
+                    <figure class="rankimg">
+                        {postrow.displayed.RANK_IMAGE}
+                    </figure>
+                </section>
+
+                <section class="data">
+                    <a class="permalink" href="{postrow.displayed.POST_URL}"><i data-lucide="link"></i></a>
+                    <span class="date">{postrow.displayed.POST_DATE_NEW}</span>
+                    <ul class="profile-icons">
+                        <li>{postrow.displayed.QUOTE_IMG}</li>
+                        <li>{postrow.displayed.EDIT_IMG}</li>
+                        <li>{postrow.displayed.DELETE_IMG}</li>
+                        <li>{postrow.displayed.IP_IMG}</li>
+                    </ul>
+                </section>
+
+                <article class="content message">
+                    {postrow.displayed.MESSAGE}
+                </article>
+
+                <!-- BEGIN switch_signature -->
+                <article class="signature" id="sig{postrow.displayed.U_POST_ID}">{postrow.displayed.SIGNATURE_NEW}
+                </article>
+                <!-- END switch_signature -->
+
+            </section>
+
+            <aside class="profile">
+
+                <figure class="avatar-post">
+                    {postrow.displayed.POSTER_AVATAR}
+                </figure>
+
+                <section class="profile-data">
+                    <section class="profile-fields">
+                        <!-- BEGIN profile_field -->
+                        <article class="profile-field">
+                            {postrow.displayed.profile_field.LABEL}
+                            {postrow.displayed.profile_field.CONTENT}
+                        </article>
+                        <!-- END profile_field -->
+                    </section>
+                </section>
+
+                <menu class="contact">
+                    <li>{postrow.displayed.PROFILE_IMG}</li>
+                    <li>{postrow.displayed.PM_IMG}</li>
+                    <!-- BEGIN contact_field -->
+                    <li>{postrow.displayed.contact_field.CONTENT}</li>
+                    <!-- END contact_field -->
+                </menu>
+
+            </aside>
+
+        </article>
+        <!-- END displayed -->
+        <!-- END postrow -->
+
+
+    </section>
+
+    <article class="pagination pagination-bottom">
+        {PAGE_NUMBER}
+        <!-- BEGIN topicpagination -->
+        {PAGINATION}
+        <!-- END topicpagination -->
+    </article>
+
+    <menu class="topic-actions topic-actions-bottom">
+
+        <!-- BEGIN switch_user_authpost -->
+        <li>
+            <a class="button" href="{U_POST_NEW_TOPIC}" rel="nofollow">NUEVO TEMA</a>
+        </li>
+        <!-- END switch_user_authpost -->
+
+        <li class="watchtopic">{S_WATCH_TOPIC}</li>
+
+        <!-- BEGIN switch_user_authreply -->
+        <li>
+            <a class="button" href="{U_POST_REPLY_TOPIC}">RESPONDER</a>
+        </li>
+        <!-- END switch_user_authreply -->
+
+    </menu>
+
+    <!-- BEGIN switch_user_logged_in -->
+    <article class="quickreply">
+        <a name="quickreply"></a>
+        {QUICK_REPLY_FORM}
+    </article>
+    <!-- END switch_user_logged_in -->
+
+
+
+    <section class="page-bottom">
+        <!-- BEGIN viewtopic_bottom -->
+        <form method="get" action="{S_FORM_MOD_ACTION}">
+            <menu class="stack row">
+                <input type="hidden" name="t" value="{TOPIC_ID}" />
+                <input type="hidden" name="{SECURE_ID_NAME}" value="{SECURE_ID_VALUE}" />
+                <li>{L_MOD_TOOLS}</li>
+                <li>{S_SELECT_MOD}</li>
+                <li><input class="button" type="submit" value="{L_GO}" /></li>
+            </menu>
+        </form>
+        <!-- END viewtopic_bottom -->
+    </section>
+</main>
