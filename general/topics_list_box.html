@@ -1,0 +1,128 @@
+<!-- BEGIN topics_list_box -->
+<!-- BEGIN row -->
+<!-- BEGIN header_table -->
+<!-- BEGIN multi_selection -->
+<script type="text/javascript">
+
+    function check_uncheck_main_{ topics_list_box.row.header_table.BOX_ID } ()
+		{
+        alert('MAIN');
+
+        var all_checked = true;
+
+        for (i = 0; (i < document.{ topics_list_box.FORMNAME }.elements.length) && all_checked; i++)
+        {
+            if (document.{ topics_list_box.FORMNAME }.elements[i].name == '{topics_list_box.FIELDNAME}[]{topics_list_box.row.header_table.BOX_ID}')
+            {
+                all_checked = document.{ topics_list_box.FORMNAME }.elements[i].checked;
+            }
+        }
+
+        document.{ topics_list_box.FORMNAME }.all_mark_{ topics_list_box.row.header_table.BOX_ID }.checked = all_checked;
+    }
+
+    function check_uncheck_all_{ topics_list_box.row.header_table.BOX_ID } ()
+		{
+        alert('ALL');
+
+        for (i = 0; i < document.{ topics_list_box.FORMNAME }.length; i++)
+        {
+            if (document.{ topics_list_box.FORMNAME }.elements[i].name == '{topics_list_box.FIELDNAME}[]{topics_list_box.row.header_table.BOX_ID}')
+            {
+                document.{ topics_list_box.FORMNAME }.elements[i].checked = document.{ topics_list_box.FORMNAME }.all_mark_{ topics_list_box.row.header_table.BOX_ID }.checked;
+            }
+        }
+    }
+
+</script>
+<!-- END multi_selection -->
+<section class="topiclist announcement">
+
+    <h2 class="topiclist-title">
+        <!-- BEGIN multi_selection -->
+        <input onclick="check_uncheck_all_{topics_list_box.row.header_table.BOX_ID}();" type="checkbox" name="all_mark_{topics_list_box.row.header_table.BOX_ID}" value="0" />
+        <!-- END multi_selection -->
+        {topics_list_box.row.L_TITLE}
+    </h2>
+
+    <section class="stack column has-spacing">
+        <!-- END header_table -->
+
+        <!-- BEGIN header_row -->
+        <strong>{topics_list_box.row.L_TITLE}</strong>
+        <!-- END header_row -->
+
+        <!-- BEGIN topic -->
+
+        <!-- BEGIN table_sticky -->
+    </section>
+
+</section>
+<section class="topiclist">
+    <!--<dd class="dterm">-->
+    <h2 class="topiclist-title">
+        <!-- BEGIN multi_selection -->
+        <input onclick="check_uncheck_all_{topics_list_box.row.header_table.BOX_ID}();" type="checkbox" name="all_mark_{topics_list_box.row.header_table.BOX_ID}" value="0" />
+        <!-- END multi_selection -->
+        {topics_list_box.row.topic.table_sticky.L_TITLE}
+    </h2>
+
+    <section class="stack column has-spacing">
+        <!-- END table_sticky -->
+
+        <article class="topic" status="{topics_list_box.row.L_TOPIC_FOLDER_ALT}">
+            <!-- BEGIN single_selection -->
+            <input type="radio" name="{topics_list_box.FIELDNAME}" value="{topics_list_box.row.FID}" {topics_list_box.row.L_SELECT} />
+            <!-- END single_selection -->
+            <figure class="icon">
+                <img src="{topics_list_box.row.TOPIC_FOLDER_IMG}" />
+            </figure>
+            <figure class="participate" style="opacity: 0; display: none;">
+                {topics_list_box.row.PARTICIPATE_POST_IMG}
+            </figure>
+            <span class="topic-type">{topics_list_box.row.TOPIC_TYPE}</span>
+            <a class="title" href="{topics_list_box.row.U_VIEW_TOPIC}">{topics_list_box.row.TOPIC_TITLE}</a>
+            <!-- BEGIN switch_description -->
+            <article class="description">
+                {topics_list_box.row.topic.switch_description.TOPIC_DESCRIPTION}
+            </article>
+            <!-- END switch_description -->
+            <article class="pagination">{topics_list_box.row.GOTO_PAGE_NEW}</article>
+            <span class="author username">{topics_list_box.row.TOPIC_AUTHOR}</span>
+            <menu class="data">
+                <li class="form-control">{topics_list_box.row.REPLIES}<span>POSTS</span></li>
+                <li class="form-control">{topics_list_box.row.VIEWS}<span>VISITAS</span></li>
+            </menu>
+            <section class="lastpost">
+                <!-- BEGIN avatar -->
+                <figure class="avatar-lastpost-topic">
+                    {topics_list_box.row.topic.avatar.LAST_POST_AVATAR}
+                </figure>
+                <!-- END avatar -->
+                <menu class="stack column">
+                    <li class="username">{topics_list_box.row.LAST_POST_AUTHOR}</li>
+                    <li class="date">{topics_list_box.row.LAST_POST_TIME}</li>
+                </menu>
+                {topics_list_box.row.LAST_POST_IMG}
+            </section>
+            <!-- BEGIN multi_selection -->
+            <input onclick="javascript:check_uncheck_main_{topics_list_box.row.BOX_ID}();" type="checkbox" name="{topics_list_box.FIELDNAME}[]{topics_list_box.row.BOX_ID}" value="{topics_list_box.row.FID}" {topics_list_box.row.L_SELECT} />
+            <!-- END multi_selection -->
+
+        </article>
+        <!-- END topic -->
+        <!-- BEGIN no_topics -->
+        <article class="alert info">
+            <i data-lucide="info"></i>
+            {topics_list_box.row.L_NO_TOPICS}
+        </article>
+        <!-- END no_topics -->
+
+        <!-- BEGIN bottom -->
+    </section>
+
+</section>
+<!-- END bottom -->
+
+<!-- END row -->
+<!-- END topics_list_box -->
