@@ -1,0 +1,93 @@
+<script src="{JS_DIR}extendedview.js" type="text/javascript"></script>
+
+<main class="search_body">
+  <h2 class="page-title">{L_SEARCH_TITLE}</h2>
+  
+  <form action="{S_SEARCH_ACTION}" method="get" name="searchform">
+    <menu class="stack column">
+      <li class="stack column">
+        <label>{L_SEARCH_KEYWORDS}</label>
+        <input type="text" name="search_keywords" />
+        <input type="hidden" name="sid" value="{SID}" />
+        <input type="hidden" name="q" value="" />
+        <input type="hidden" name="domains" value="{SEARCH_FORUM_URL}" />
+        <input type="hidden" name="sitesearch" value="{SEARCH_FORUM_URL}" />
+        <input type="hidden" name="client" value="{GOOGLE_CODE}" />
+        <input type="hidden" name="forid" value="1" />
+        <input type="hidden" name="ie" value="{S_CONTENT_ENCODING}" />
+        <input type="hidden" name="oe" value="{S_CONTENT_ENCODING}" />
+        <input type="hidden" name="hl" value="{L_LANG_HL}" />
+        <input type="hidden" name="cof" value="GALT:#{T_GOO_LINK};GL:1;DIV:#{T_TD_COLOR1};VLC:#{T_VISITED_LINK};AH:center;BGC:#{T_TR_COLOR1};LBGC:#{T_TD_COLOR1};ALC:#{T_ACTIVE_LINK};LC:#{T_GOO_LINK};T:#{T_GOO_TEXT};GFNT:#{T_GOO_LINK};GIMP:#{T_GOO_LINK};FORID:11" />
+        <input class="button" type="button" value="{L_SEARCH} Google" onclick="document.searchform.action='{U_GOOGLERESULTS}';document.searchform.q.value=document.searchform.search_keywords.value;document.searchform.submit()" />
+      </li>
+      <!-- BEGIN switch_search_full_text -->
+      <li class="form-control">
+        <input id="text" type="radio" name="search_by" value="text" checked="checked" />
+        <label for="text">{switch_search_full_text.L_SEARCH_BY_TEXT}</label>
+      </li>
+      <li class="form-control">
+        <input id="subject" type="radio" name="search_by" value="subject" />
+        <label for="subject">{switch_search_full_text.L_SEARCH_BY_SUBJECT}</label>
+      </li>
+      <!-- END switch_search_full_text -->
+      <!-- BEGIN switch_search_terms -->
+      <li class="form-control">
+        <input id="any" type="radio" name="search_terms" value="any" checked="checked" /> 
+        <label for="any">{switch_search_terms.L_SEARCH_ANY_TERMS}</label>
+      </li>
+      <li class="form-control">
+        <input id="all" type="radio" name="search_terms" value="all" /> 
+        <label for="all">{switch_search_terms.L_SEARCH_ALL_TERMS}</label>
+      </li>
+      <!-- END switch_search_terms -->
+      <!-- BEGIN TAGS -->
+      <li class="form-control">
+        <input id="rtags" type="checkbox" name="is_tag" value="true" /> 
+        <label for="rtags">{TAGS.L_SEARCH_TAGS}</label>
+      </li>
+      <!-- END TAGS -->
+      <li class="stack column">
+        <label>{L_SEARCH_AUTHOR}</label>
+        <input type="text" name="search_author" />
+      </li>
+    </menu>
+    <menu class="stack column">
+      <li class="stack column">
+        <label>{L_FORUM}</label>
+        <select name="search_where">{S_FORUM_OPTIONS}</select>
+      </li>
+      <li class="stack column">
+        <label>{L_SEARCH_PREVIOUS}</label>
+        <select name="search_time">{S_TIME_OPTIONS}</select>
+      </li>
+      <li class="stack column">
+        <label>{L_DISPLAY_RESULTS}</label>
+        <li class="form-control">
+          <input id="topics" type="radio" name="show_results" value="topics" checked="checked" />
+          <label for="topics">{L_TOPICS}</label>
+        </li>
+        <li class="form-control">
+          <input id="posts" type="radio" name="show_results" value="posts" />
+          <label for="posts">{L_POSTS}</label>
+        </li>
+      </li>
+      <li class="stack column">
+        <label>{L_SORT_BY}</label>
+        <select name="sort_by">{S_SORT_OPTIONS}</select>
+        <li class="form-control">
+          <input id="ASC" type="radio" name="sort_dir" value="ASC" />
+          <label for="ASC">{L_SORT_ASCENDING}</label>
+        </li>
+        <li class="form-control">
+          <input id="DESC" type="radio" name="sort_dir" value="DESC" checked="checked" />
+          <label for="DESC">{L_SORT_DESCENDING}</label>
+        </li>
+      </li>
+    </menu>
+    <menu class="stack buttons">
+      {S_HIDDEN_FIELDS}
+      <input type="hidden" name="google" value="" />
+      <li><input type="submit" value="{L_SEARCH}" onclick="document.searchform.google.value='';" /></li>
+    </menu>
+  </form>
+</main>
