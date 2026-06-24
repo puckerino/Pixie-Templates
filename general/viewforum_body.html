@@ -1,0 +1,24 @@
+<main class="viewforum_body">
+  <h2 class="page-title">{FORUM_NAME}</h2>
+  <menu class="topic-actions topic-actions-top">
+    <li>{S_WATCH_FORUM}</li>
+    <li><a class="button" href="{U_MARK_READ}">{L_MARK_TOPICS_READ}</a></li>
+        <!-- BEGIN switch_user_authpost -->
+    <li><a class="button" href="{U_POST_NEW_TOPIC}" accesskey="n" rel="nofollow">NUEVO TEMA</a></li>
+    <!-- END switch_user_authpost -->
+  </menu>
+  <article class="pagination">{PAGINATION}</article>
+  
+  {BOARD_INDEX}
+    <section class="stack column has-spacing">
+    {TOPICS_LIST_BOX}
+  </section>
+  
+  <section class="page-bottom">
+        <article>
+      <h3>{L_TABS_PERMISSIONS}</h3>
+      {S_AUTH_LIST}
+    </article>
+  </section>
+  
+</main>
