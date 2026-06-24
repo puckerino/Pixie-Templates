@@ -1,0 +1,78 @@
+<main class="memberlist">
+  <h2 class="page-title">
+    {PAGE_TITLE}
+  </h2>
+  <section class="grid-2-leftmax">
+  <form action="{S_MODE_ACTION}" method="get" style="align-self: start;">
+    <menu class="stack column has-spacing">
+      <li class="form-control column">
+        <label>{L_USER_SELECT}</label>
+        <input type="text" name="username" maxlength="25" size="20" value="{L_USER_SELECT_VALUE}" />
+      </li>
+      <li class="form-control column">
+        <label>{L_SELECT_SORT_METHOD}</label>
+        {S_MODE_SELECT}
+      </li>
+      <li class="form-control column">
+        <label>{L_ORDER}</label>
+        {S_ORDER_SELECT}
+      </li>
+      {S_HIDDEN_SID}
+      <li>
+        <input type="submit" name="submit" value="{L_SUBMIT}" />
+      </li>
+    </menu>
+  </form>
+
+    
+  <section class="stack column">
+  <!-- BEGIN switch_pagination -->
+  <article class="pagination pagination-top">{PAGINATION}</article>
+  <!-- END switch_pagination -->
+    <section class="memberlist-users has-spacing">
+    <!-- BEGIN memberrow -->
+    <article class="member">
+      <figure class="avatar-memberlist">
+        {memberrow.AVATAR_IMG}
+      </figure>
+      <a href="{memberrow.U_VIEWPROFILE}" class="username">
+        {memberrow.USERNAME}
+      </a>
+      <!-- BEGIN switch_td_group -->
+      <article class="group">
+        {memberrow.GROUPS}
+      </article>
+      <!-- END switch_td_group -->
+      <menu class="data">
+        <!-- BEGIN switch_td_point -->
+        <li>
+          {memberrow.POINTS}
+        </li>
+        <!-- END switch_td_point -->
+        <li>{memberrow.JOINED}</li>
+        <li>{memberrow.LASTVISIT}</li>
+        <li>{memberrow.POSTS}</li>
+      </menu>
+      <menu class="contact">
+        <!-- BEGIN switch_td_pm -->
+        <li>{memberrow.PM_IMG}</li>
+        <!-- END switch_td_pm -->
+        <li><a href="{memberrow.U_VIEWPROFILE}">PERFIL</a></li>
+      </menu>
+    </article>
+    <!-- END memberrow -->
+    </section>
+    <!-- BEGIN switch_no_user -->
+    <article class="alert info">
+      <i data-lucide="info"></i>
+      {switch_no_user.L_NO_USER}
+    </article>
+    <!-- END switch_no_user -->
+      <!-- BEGIN switch_pagination -->
+  <article class="pagination pagination-bottom">{PAGINATION}</article>
+  <!-- END switch_pagination -->
+  </section>
+  </section>
+</main>
+
+
