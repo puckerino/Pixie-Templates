@@ -1,0 +1,39 @@
+<main class="discover">
+  <h2 class="page-title">{TITLE_ACTIVITY_FEED}</h2>
+  <section class="stack column has-spacing">
+    
+    <!-- BEGIN no_activity -->
+    <article class="alert info">
+      <i data-lucide="info"></i>
+      {no_activity.INFO}
+    </article>
+    <!-- END no_activity -->
+    
+    <!-- BEGIN has_activity -->
+    
+    <!-- BEGIN activity_date_group -->
+    <h3 class="page-subtitle">{has_activity.activity_date_group.FORMATTED_DATE}</h3>
+    <menu class="stack column">
+      <!-- BEGIN activity_feed_item -->
+      <li class="feed-item list-item activity-type-{has_activity.activity_date_group.activity_feed_item.TYPE} {has_activity.activity_date_group.activity_feed_item.EXTRA_CLASS}">
+        <figure class="avatar-discover">
+          <img src="{has_activity.activity_date_group.activity_feed_item.U_AVATAR}" />
+        </figure>
+        <time class="time" datetime="{has_activity.activity_date_group.activity_feed_item.DATETIME}" title="{has_activity.activity_date_group.activity_feed_item.DATETIME}">
+          {has_activity.activity_date_group.activity_feed_item.TIME_FORMATTED}
+        </time>
+        <span>
+          {has_activity.activity_date_group.activity_feed_item.ACTIVITY}
+        </span>
+      </li>
+      <!-- END activity_feed_item -->
+    </menu>
+    <!-- END activity_date_group -->
+    <article class="alert info">
+      <i data-lucide="info"></i>
+      {has_activity.L_ACTIVITY_END}
+    </article>
+    <!-- END has_activity -->
+    {JS_COLLAPSE}
+  </section>
+</main>
