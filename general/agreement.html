@@ -1,0 +1,26 @@
+<main class="agreement">
+<form method="GET" id="frmAgreement" action="{U_AGREE_OVER13}">
+  <section class="agreement">
+    <article class="prose forum-rules">
+      {AGREEMENT}
+    </article>
+    <article class="prose my-rules">
+      {MY_RULES}
+    </article>
+    <input type="hidden" name="step" value="2" />
+    <menu class="stack column">
+      <li class="form-control">
+        <input type="checkbox" name="agreement" id="frmAgreeChkAgree" value="1" data-validation="required"/>
+        <label for="frmAgreeChkAgree">{AGREE_CONDITIONS}</label>
+      </li>
+      <li class="form-control">
+        <input type="checkbox" name="privacy" id="frmAgreeChkPrivacy" value="1" data-validation="required"/>
+        <label for="frmAgreeChkPrivacy">{AGREE_PRIVACY}</label>
+      </li>
+      <li>
+        <input type="submit" value="{AGREE_OVER_13}" />
+      </li>
+    </menu>
+  </section>
+</form>
+</main>
