@@ -1,0 +1,62 @@
+<!-- BEGIN catrow -->
+<!-- BEGIN tablehead -->
+<section class="category" id="{catrow.tablehead.ID}">
+  <hgroup>
+    {catrow.tablehead.L_FORUM}
+  </hgroup>
+  <section class="forum-wrap">
+<!-- END tablehead -->
+
+<!-- BEGIN forumrow -->
+  <article class="forum">
+    <figure class="icon">
+      <img src="{catrow.forumrow.FORUM_FOLDER_IMG}" />
+    </figure>
+    <a class="title" href="{catrow.forumrow.U_VIEWFORUM}">
+      {catrow.forumrow.FORUM_NAME}
+    </a>
+    <menu class="data">
+      <li class="stack row">{catrow.forumrow.TOPICS}<span>{L_TOPICS}</span></li>
+      <li class="stack row">{catrow.forumrow.POSTS}<span>{L_POSTS}</span></li>
+    </menu>
+    <figure class="forum-img"></figure>
+    <div class="description">
+      {catrow.forumrow.FORUM_DESC}
+    </div>
+    <article class="links"></article>
+    <section class="lastpost">
+      <!-- BEGIN avatar -->
+      <figure class="avatar-lastpost-forum">{catrow.forumrow.avatar.LAST_POST_AVATAR}</figure>
+      <!-- END avatar -->
+      <menu class="lastpost-data">
+        <!-- BEGIN switch_topic_title -->
+        <li class="title">
+          <a href="{catrow.forumrow.U_LATEST_TOPIC}" title="{catrow.forumrow.LATEST_TOPIC_TITLE}">
+            {catrow.forumrow.LATEST_TOPIC_NAME}
+          </a>
+        </li>
+        <!-- END switch_topic_title -->
+        <li class="username">
+          {catrow.forumrow.USER_LAST_POST}
+        </li>
+      </menu>
+    </section>
+      
+  </article>
+<!-- END forumrow -->
+
+<!-- BEGIN tablefoot -->
+  </section>
+</section>
+<!-- END tablefoot -->
+
+<!-- END catrow -->
+<script>
+$('.forum-links').each(function(){
+$(this).parents('.forum').find('.links').append(this);
+});
+
+$('.description img').each(function(){
+$(this).parents('.forum').find('.forum-img').append(this);
+});
+</script>
