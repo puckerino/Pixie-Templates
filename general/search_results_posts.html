@@ -1,0 +1,32 @@
+<main class="search-list list-posts">
+  <h2 class="page-title">{L_SEARCH_MATCHES}</h2>
+  <article class="pagination pagination-top">{PAGINATION}</article>
+  <section class="stack column has-spacing">
+  <!-- BEGIN searchresults -->
+  <article class="search-list-post">
+    <h3 class="page-subtitle has-spacing">{searchresults.TOPIC_TITLE}</h3>
+    <menu class="topic-actions topic-actions-top">
+      <li class="permalink">
+        <a class="button permalink" href="{searchresults.U_POST}"><i data-lucide="link"></i></a>
+      </li>
+      <li class="date">
+        {searchresults.POST_DATE}
+      </li>
+      <li><i data-lucide="map-pin"></i></li>
+      <li>
+        <a href="{searchresults.U_FORUM}">{searchresults.FORUM_NAME}</a>
+      </li>
+      <li><i data-lucide="chevron-right"></i></li>
+      <li>
+        <a href="{searchresults.U_TOPIC}">{searchresults.TOPIC_TITLE}</a>
+      </li>
+      <li>
+        <span class="username">{searchresults.POSTER_NAME}</span>
+      </li>
+    </menu>
+    <article class="content message has-spacing">{searchresults.MESSAGE}</article>
+  </article>
+  <!-- END searchresults -->
+  </section>
+  <article class="pagination pagination-bottom">{PAGINATION}</article>
+</main>
