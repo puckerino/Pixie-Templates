@@ -1,14 +1,14 @@
-<article class="confirm_body">
-  <h2 class="page-title">{MESSAGE_TITLE}</h2>
-  <form action="{S_CONFIRM_ACTION}" method="post">
-    <article class="prose">
-      {MESSAGE_TEXT}
-      {OPTIONAL_BAN_NEW}
-    </article>
-    <menu class="stack">
-      {S_HIDDEN_FIELDS}
-      <li><input class="button" type="submit" name="confirm" value="{L_YES}" /></li>
-      <li><input class="button" type="submit" name="cancel" value="{L_NO}" /></li>
-    </menu>
-  </form>
-</article>
+<main class="confirm_body">
+    <h2 class="page-title">{MESSAGE_TITLE}</h2>
+    <form action="{S_CONFIRM_ACTION}" method="post" class="stack column">
+        <article class="prose has-spacing">
+            {MESSAGE_TEXT}
+            {OPTIONAL_BAN_NEW}
+        </article>
+        <menu class="stack page-bottom has-spacing">
+            {S_HIDDEN_FIELDS}
+            <li><input class="button" type="submit" name="confirm" value="{L_YES}" /></li>
+            <li><input class="button" type="submit" name="cancel" value="{L_NO}" /></li>
+        </menu>
+    </form>
+</main>
