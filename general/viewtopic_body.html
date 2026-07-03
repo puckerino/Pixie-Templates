@@ -1,159 +1,198 @@
 <main class="viewtopic_body">
+  
+  <h2 class="page-title"><a href="{TOPIC_URL}">{TOPIC_TITLE}</a></h2>
+  
+  <menu class="topic-actions topic-actions-top">
+    
+    <!-- BEGIN switch_user_authpost -->
+    <li>
+      <a class="button" href="{U_POST_NEW_TOPIC}" rel="nofollow">NUEVO TEMA</a>
+    </li>
+    <!-- END switch_user_authpost -->
+    
 
-    <h2 class="page-title"><a href="{TOPIC_URL}">{TOPIC_TITLE}</a></h2>
+    <li class="watchtopic">{S_WATCH_TOPIC}</li>
 
-    <menu class="topic-actions topic-actions-top">
-
-        <!-- BEGIN switch_user_authpost -->
-        <li>
-            <a class="button" href="{U_POST_NEW_TOPIC}" rel="nofollow">NUEVO TEMA</a>
-        </li>
-        <!-- END switch_user_authpost -->
-
-        <li class="watchtopic">{S_WATCH_TOPIC}</li>
-
-        <!-- BEGIN switch_user_authreply -->
-        <li>
-            <a class="button" href="{U_POST_REPLY_TOPIC}">RESPONDER</a>
-        </li>
-        <!-- END switch_user_authreply -->
-
-    </menu>
-
-    <article class="pagination pagination-top">
-        {PAGE_NUMBER}
-        <!-- BEGIN topicpagination -->
-        {PAGINATION}
-        <!-- END topicpagination -->
-    </article>
-    <section class="stack column has-spacing">
-
-        {POLL_DISPLAY}
-
-        <!-- BEGIN postrow -->
-        <!-- BEGIN displayed -->
-        <a href="{postrow.displayed.POST_URL}"></a>
-        <article id="p{postrow.displayed.U_POST_ID}"
-            class="post post--{postrow.displayed.U_POST_ID} {postrow.displayed.GROUP}">
-
-            <section class="postbody">
-
-                <section class="postheader">
-                    <hgroup>
-                        <h2 class="username">
-                            {postrow.displayed.POSTER_NAME}
-                        </h2>
-                        <article class="rank">
-                            {postrow.displayed.POSTER_RANK_NEW}
-                        </article>
-                    </hgroup>
-                    <div data-profile-render-value="imagen-post"></div>
-                    <figure class="rankimg">
-                        {postrow.displayed.RANK_IMAGE}
-                    </figure>
-                </section>
-
-                <section class="data">
-                    <a class="permalink" href="{postrow.displayed.POST_URL}"><i data-lucide="link"></i></a>
-                    <span class="date">{postrow.displayed.POST_DATE_NEW}</span>
-                    <ul class="profile-icons">
-                        <li>{postrow.displayed.QUOTE_IMG}</li>
-                        <li>{postrow.displayed.EDIT_IMG}</li>
-                        <li>{postrow.displayed.DELETE_IMG}</li>
-                        <li>{postrow.displayed.IP_IMG}</li>
-                    </ul>
-                </section>
-
-                <article class="content message">
-                    {postrow.displayed.MESSAGE}
-                </article>
-
-                <!-- BEGIN switch_signature -->
-                <article class="signature" id="sig{postrow.displayed.U_POST_ID}">{postrow.displayed.SIGNATURE_NEW}
-                </article>
-                <!-- END switch_signature -->
-
-            </section>
-
-            <aside class="profile">
-
-                <figure class="avatar-post">
-                    {postrow.displayed.POSTER_AVATAR}
-                </figure>
-
-                <section class="profile-data">
-                    <section class="profile-fields">
-                        <!-- BEGIN profile_field -->
-                        <article class="profile-field">
-                            {postrow.displayed.profile_field.LABEL}
-                            {postrow.displayed.profile_field.CONTENT}
-                        </article>
-                        <!-- END profile_field -->
-                    </section>
-                </section>
-
-                <menu class="contact">
-                    <li>{postrow.displayed.PROFILE_IMG}</li>
-                    <li>{postrow.displayed.PM_IMG}</li>
-                    <!-- BEGIN contact_field -->
-                    <li>{postrow.displayed.contact_field.CONTENT}</li>
-                    <!-- END contact_field -->
+    
+    <!-- BEGIN switch_user_authreply -->
+    <li>
+    <a class="button" href="{U_POST_REPLY_TOPIC}">RESPONDER</a>
+    </li>
+    <!-- END switch_user_authreply -->
+    
+  </menu>
+  
+  <article class="pagination stack pagination-top">
+    <!-- BEGIN topicpagination -->
+    {PAGINATION}
+    <!-- END topicpagination -->
+  </article>
+  <section class="stack column has-spacing">
+  
+  {POLL_DISPLAY}
+  
+  <!-- BEGIN postrow -->
+  <!-- BEGIN displayed -->
+  <a href="{postrow.displayed.POST_URL}"></a>
+  <article id="p{postrow.displayed.U_POST_ID}" class="post post--{postrow.displayed.U_POST_ID} {postrow.displayed.GROUP}">
+    
+    <section class="postbody">
+      
+      <section class="postheader has-spacing">
+        <figure class="avatar-post-mobile">
+          {postrow.displayed.POSTER_AVATAR}
+        </figure>
+        <hgroup>
+          <h2 class="username">
+            {postrow.displayed.POSTER_NAME}
+          </h2>
+          <article class="rank">
+            {postrow.displayed.POSTER_RANK_NEW}
+          </article>
+        </hgroup>
+        <div data-profile-render-value="imagen-post"></div>
+        <figure class="rankimg">
+          {postrow.displayed.RANK_IMAGE}
+        </figure>
+      </section>
+      
+      <section class="data">
+        <a class="permalink" href="{postrow.displayed.POST_URL}"><i data-lucide="link"></i></a>
+        <span class="date">{postrow.displayed.POST_DATE_NEW}</span>
+        <ul class="profile-icons">
+          <li>{postrow.displayed.QUOTE_IMG}</li>
+          <li>{postrow.displayed.EDIT_IMG}</li>
+          <li>{postrow.displayed.DELETE_IMG}</li>
+          <li>{postrow.displayed.IP_IMG}</li>
+        </ul>
+      </section>
+      
+      <article class="content message">
+        {postrow.displayed.MESSAGE}
+      </article>
+       <!-- BEGIN switch_likes_active -->
+            <section class="fa_like_div">
+                <menu class="likes">
+                    <li>
+                        <button class="rep-button {postrow.displayed.switch_likes_active.C_VOTE_LIKE}"  data-href="{postrow.displayed.switch_likes_active.U_VOTE_LIKE}" data-href-rm="{postrow.displayed.switch_likes_active.U_VOTE_RM_LIKE}">
+                            <i data-lucide="heart"></i>
+                            <span>{postrow.displayed.switch_likes_active.L_LIKE}</span>
+                            {postrow.displayed.switch_likes_active.COUNT_VOTE_LIKE}
+                        </button>
+                    </li>
+                    <!-- BEGIN switch_like_list -->
+                    <li class="like-list">
+                       {postrow.displayed.switch_likes_active.switch_like_list.D_LIKE_LIST} 
+                    </li>
+                    <!-- END switch_like_list -->
                 </menu>
-
-            </aside>
-
-        </article>
-        <!-- END displayed -->
-        <!-- END postrow -->
-
-
+                <menu class="dislikes">
+                    <!-- BEGIN switch_dislike_button -->
+                    <li>
+                        <button class="rep-button {postrow.displayed.switch_likes_active.switch_dislike_button.C_VOTE_DISLIKE}" data-href="{postrow.displayed.switch_likes_active.switch_dislike_button.U_VOTE_DISLIKE}" data-href-rm="{postrow.displayed.switch_likes_active.switch_dislike_button.U_VOTE_RM_LIKE}">
+                            <i data-lucide="thumbs-down"></i>
+                            <span>{postrow.displayed.switch_likes_active.switch_dislike_button.L_DISLIKE}</span>
+                            {postrow.displayed.switch_likes_active.switch_dislike_button.COUNT_VOTE_DISLIKE}
+                        </button>
+                    </li>
+                    <!-- END switch_dislike_button -->
+                    <!-- BEGIN switch_dislike_list -->
+                    <li class="dislike-list">
+                        {postrow.displayed.switch_likes_active.switch_dislike_list.D_DISLIKE_LIST}
+                    </li>
+                    <!-- END switch_dislike_list -->
+                </menu>
+            </section>
+            <!-- END switch_likes_active -->
+      
+      <!-- BEGIN switch_signature -->
+      <article class="signature has-spacing" id="sig{postrow.displayed.U_POST_ID}">{postrow.displayed.SIGNATURE_NEW}</article>
+      <!-- END switch_signature -->
+      
     </section>
+    
+    <aside class="profile">
+      
+      <figure class="avatar-post">
+        {postrow.displayed.POSTER_AVATAR}
+      </figure>
+      
+      <section class="profile-data">
+        <section class="profile-fields has-spacing">
+          <!-- BEGIN profile_field -->
+          <article class="profile-field">
+            {postrow.displayed.profile_field.LABEL} 
+            {postrow.displayed.profile_field.CONTENT}
+          </article>
+          <!-- END profile_field -->
+        </section>
+      </section>
 
-    <article class="pagination pagination-bottom">
-        {PAGE_NUMBER}
-        <!-- BEGIN topicpagination -->
-        {PAGINATION}
-        <!-- END topicpagination -->
-    </article>
+      <menu class="contact">
+        <li>{postrow.displayed.PROFILE_IMG}</li>
+        <li>{postrow.displayed.PM_IMG}</li>
+        <!-- BEGIN contact_field --> 
+        <li>{postrow.displayed.contact_field.CONTENT}</li>
+        <!-- END contact_field -->
+      </menu>
+      
+      
 
+      
+    </aside>
+    
+  </article>
+  <!-- END displayed -->
+  <!-- END postrow -->
+    
+
+  </section>
+  
+  <article class="pagination stack pagination-bottom">
+    <!-- BEGIN topicpagination -->
+    {PAGINATION}
+    <!-- END topicpagination -->
+  </article>
+  
     <menu class="topic-actions topic-actions-bottom">
-
-        <!-- BEGIN switch_user_authpost -->
-        <li>
-            <a class="button" href="{U_POST_NEW_TOPIC}" rel="nofollow">NUEVO TEMA</a>
-        </li>
-        <!-- END switch_user_authpost -->
-
-        <li class="watchtopic">{S_WATCH_TOPIC}</li>
-
-        <!-- BEGIN switch_user_authreply -->
-        <li>
-            <a class="button" href="{U_POST_REPLY_TOPIC}">RESPONDER</a>
-        </li>
-        <!-- END switch_user_authreply -->
-
-    </menu>
-
-    <!-- BEGIN switch_user_logged_in -->
-    <article class="quickreply">
-        <a name="quickreply"></a>
-        {QUICK_REPLY_FORM}
-    </article>
-    <!-- END switch_user_logged_in -->
-
-
-
-    <section class="page-bottom">
-        <!-- BEGIN viewtopic_bottom -->
-        <form method="get" action="{S_FORM_MOD_ACTION}">
-            <menu class="stack row">
-                <input type="hidden" name="t" value="{TOPIC_ID}" />
-                <input type="hidden" name="{SECURE_ID_NAME}" value="{SECURE_ID_VALUE}" />
-                <li>{L_MOD_TOOLS}</li>
-                <li>{S_SELECT_MOD}</li>
-                <li><input class="button" type="submit" value="{L_GO}" /></li>
-            </menu>
-        </form>
-        <!-- END viewtopic_bottom -->
-    </section>
+    
+    <!-- BEGIN switch_user_authpost -->
+    <li>
+      <a class="button" href="{U_POST_NEW_TOPIC}" rel="nofollow">NUEVO TEMA</a>
+    </li>
+    <!-- END switch_user_authpost -->
+      
+      <li class="watchtopic">{S_WATCH_TOPIC}</li>
+    
+    <!-- BEGIN switch_user_authreply -->
+    <li>
+    <a class="button" href="{U_POST_REPLY_TOPIC}">RESPONDER</a>
+    </li>
+    <!-- END switch_user_authreply -->
+    
+  </menu>
+  
+  <!-- BEGIN switch_user_logged_in -->
+  <article class="quickreply has-spacing">
+  <a name="quickreply"></a>
+  {QUICK_REPLY_FORM}
+  </article>
+  <!-- END switch_user_logged_in -->
+  
+  
+  <!-- BEGIN viewtopic_bottom -->
+  <section class="page-bottom">
+    
+    <form method="get" action="{S_FORM_MOD_ACTION}">
+      <menu class="stack row">
+        <input type="hidden" name="t" value="{TOPIC_ID}" />
+	<input type="hidden" name="{SECURE_ID_NAME}" value="{SECURE_ID_VALUE}" />
+        <li>{L_MOD_TOOLS}</li>
+        <li>{S_SELECT_MOD}</li>
+        <li><input class="button" type="submit" value="{L_GO}" /></li>
+      </menu>
+    </form>
+        
+  </section>
+  <!-- END viewtopic_bottom -->
 </main>
