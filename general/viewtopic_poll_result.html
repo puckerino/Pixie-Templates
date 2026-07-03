@@ -1,0 +1,71 @@
+<section class="poll_results">
+  
+  <h3 class="page-subtitle page-top">
+    {POLL_QUESTION}
+  </h3>
+  <menu class="topic-actions topic-actions-top">
+    <li class="total-voters">{ALL_POLL_VOTERS_LIST}</li>
+    <li class="total-votes"><span>{TOTAL_VOTES} votos</span></li>
+  </menu>
+  
+  <section class="stack column has-spacing">
+    
+    <!-- BEGIN poll_option -->
+    <article class="poll-result has-spacing" style="background: linear-gradient(var(--accent), var(--accent)); background-size: {poll_option.POLL_OPTION_PERCENT}">
+      <h5>{poll_option.POLL_OPTION_CAPTION}</h5>
+      <menu class="stack">
+        <li>
+          {poll_option.POLL_OPTION_RESULT} VOTOS
+        </li>
+        <li>
+        {poll_option.POLL_OPTION_PERCENT}
+        </li>
+      </menu>
+    </article>
+    <!-- END poll_option -->
+    
+  </section>
+  
+  <menu class="topic-actions topic-actions-bottom">
+    <!-- BEGIN switch_back_to_vote -->
+    <li>
+      <a class="button" href="{switch_back_to_vote.U_BACK_TO_VOTE}">
+        {switch_back_to_vote.L_BACK}
+      </a>
+    </li>
+    <!-- END switch_back_to_vote -->
+    
+    <!-- BEGIN cancel_vote -->
+    <li>
+      <a class="button" href="{U_CANCEL_VOTE}">{L_CANCEL_VOTE}</a>
+    </li>
+    <!-- END cancel_vote -->
+    
+    <li>{CLOSE_POLL}</li>
+    <article class="alert info">{L_VOTE_EXPIRE}</article>
+  </menu>
+
+  <section class="page-bottom">
+    
+    <menu class="vote-recap stack column">
+      
+      <!-- BEGIN poll_option -->
+      <li class="form-control column list-item">
+        <hgroup class="grid-2-rightmax">
+        <span>{poll_option.POLL_OPTION_CAPTION}</span>
+        <span>{poll_option.POLL_OPTION_RESULT} VOTOS</span>
+        </hgroup>
+        <!-- BEGIN option_voters -->
+        <div class="wide">{poll_option.option_voters.POLL_OPTION_VOTERS}</div>
+        <!-- END option_voters -->
+      </li>
+      <!-- END poll_option -->
+    
+    </menu>
+    
+    <!-- BEGIN switch_hide_result -->
+    <div id="hide_result_msg">{L_POLL_HIDE_RESULT}</div>
+    <!-- END switch_hide_result -->
+  
+  </section>
+</section>
