@@ -1,27 +1,80 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" dir="{S_CONTENT_DIRECTION}" id="min-width" lang="{L_LANG_HTML}" xml:lang="{L_LANG_HTML}" {NAMESPACE_FB_LIKE} {NAMESPACE_FB} {NAMESPACE_BBCODE}>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+		"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="{S_CONTENT_DIRECTION}" id="min-width" lang="{L_LANG_HTML}"
+	  xml:lang="{L_LANG_HTML}" {NAMESPACE_FB_LIKE} {NAMESPACE_FB} {NAMESPACE_BBCODE}>
 <head>
-	<title>{SITENAME_TITLE}{PAGE_TITLE}</title>
-	<meta http-equiv="content-type" content="text/html; charset={S_CONTENT_ENCODING}"/>
-	<meta http-equiv="content-script-type" content="text/javascript"/>
-	<meta http-equiv="content-style-type" content="text/css"/>
-	<!-- BEGIN switch_compat_meta -->
-	<meta http-equiv="X-UA-Compatible" content="IE={switch_compat_meta.VERSION}"/>
-	<!-- END switch_compat_meta -->
-	<!-- BEGIN switch_canonical_url -->
-	<link rel="canonical" href="{switch_canonical_url.CANONICAL_URL}"/>
-	<!-- END switch_canonical_url -->
-	{META_FAVICO}
-	{META}
-	{META_FB_LIKE}
-	<meta name="title" content="{SITENAME_TITLE}{PAGE_TITLE}"/>
-  	
-  	<!--RESET-->
-  	<link rel="stylesheet" href="https://puckerino.github.io/Pixie/styles/pixie-reset.css" />
+  <title>{SITENAME_TITLE}{PAGE_TITLE}</title>
+  <meta http-equiv="content-type" content="text/html; charset={S_CONTENT_ENCODING}"/>
+  <meta http-equiv="content-script-type" content="text/javascript"/>
+  <meta http-equiv="content-style-type" content="text/css"/>
+  <!-- BEGIN switch_compat_meta -->
+  <meta http-equiv="X-UA-Compatible" content="IE={switch_compat_meta.VERSION}"/>
+  <!-- END switch_compat_meta -->
+  <!-- BEGIN switch_canonical_url -->
+  <link rel="canonical" href="{switch_canonical_url.CANONICAL_URL}"/>
+  <!-- END switch_canonical_url -->
+  {META_FAVICO}
+  {META}
+  {META_FB_LIKE}
+  <meta name="title" content="{SITENAME_TITLE}{PAGE_TITLE}"/>
   
-  	<!--UTILS-->
-  	<link rel="stylesheet" href="https://puckerino.github.io/Pixie/styles/pixie-utils.css" />
-    	<link rel="stylesheet" href="https://puckerino.github.io/Pixie/styles/pixie-topic.css" />
+  <script>
+    window.PIXIE = {
+    base: "https://puckerino.github.io/Pixie/",
+    themeBase: "https://puckerino.github.io/Byrne/",
+    
+    styles: {
+    
+    beforeForumCSS: [
+      "styles/pixie-reset.css",
+      "styles/pixie-utils.css",
+      "styles/pixie-topic.css",
+      "styles/pixie-forums.css"
+    ],
+
+    afterForumCSS: [
+      "styles/pixie-icons.css",
+      "styles/pixie-elements.css",
+      "styles/pixie-popover.css",
+      "styles/pixie-tooltips.css"
+    ],
+
+    body: [
+      "styles/pixie-editor.css",
+      "styles/pixie-postingbox.css",
+      "styles/pixie-ucp.css",
+      "styles/pixie-nav.css"
+    ]
+  },
+
+  themeStyles: {
+    
+    afterForumCSS: [
+      "styles/tablon.css",
+      "styles/forums.css",
+      "styles/nav.css"
+    ],
+    
+    body: [
+      "styles/footer.css"
+    ]
+  },
+
+  scripts: [
+    "core/pixiekit.js",
+    "modules/pixie-navbar.js",
+    "modules/pixie-editor.js",
+    "modules/pixie-footer.js",
+    "modules/pixie-replace.js",
+    "modules/pixie-copy.js",
+    "modules/pixie-theme.js",
+    "modules/pixie-fields.js"
+  ]
+};
+</script>
+
+<script src="https://puckerino.github.io/PixieLoader/loader-core.js"></script>
+<script src="https://puckerino.github.io/PixieLoader/head-before.js"></script>
   
   	
   	<!--STYLES PA-->
@@ -33,11 +86,7 @@
   	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   	<link href="https://fonts.googleapis.com/css2?family=Chivo+Mono:ital,wght@0,100..900;1,100..900&family=Host+Grotesk:ital,wght@0,300..800;1,300..800&family=Karla:ital,wght@0,200..800;1,200..800&family=Oi&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet" />
   
-  	<!------- EXTERNAL STYLES -------->
-  	<link rel="stylesheet" href="https://puckerino.github.io/Pixie/styles/pixie-icons.css" />
-  	<link rel="stylesheet" href="https://puckerino.github.io/Pixie/styles/pixie-elements.css" />
-    	<link rel="stylesheet" href="https://puckerino.github.io/Pixie/styles/pixie-popover.css" />
-  	<link rel="stylesheet" href="https://puckerino.github.io/Pixie/styles/pixie-tooltips.css" />
+<script src="https://puckerino.github.io/PixieLoader/head-after.js"></script>
   	
   	
   
@@ -253,35 +302,11 @@
 </script>
 <!-- END inactive_users_modal -->
 
-<!-- BEGIN switch_login_popup -->
-<div id="login_popup" style="z-index: 10000 !important;">
-	<div class="h3">{SITENAME}</div>
-	{LOGIN_POPUP_MSG}
-	<div id="login_popup_buttons">
-		<form action="{S_LOGIN_ACTION}" method="get">
-			<input type="submit" class="button1" value="{L_LOGIN}"/>
-			<input type="button" class="button1" value="{L_REGISTER}" onclick="parent.location='{U_REGISTER}';"/>
-			<input id="login_popup_close" type="button" class="button2" value="{L_DONT_DISPLAY_AGAIN}"/>
-		</form>
-	</div>
-</div>
-<!-- END switch_login_popup -->
 
-<!-- BEGIN switch_like_popup -->
-<div id="like_popup" style="z-index: 10000 !important;">
-	<div class="h3">{SITENAME}</div>
-	{LIKE_POPUP_MSG}
-	<div id="like_popup_buttons">
-		<form action="{S_LOGIN_ACTION}" method="get">
-			<input type="submit" class="button1" value="{L_LOGIN}"/>
-			<input type="button" class="button1" value="{L_REGISTER}" onclick="parent.location='{U_REGISTER}';"/>
-			<input id="like_popup_close" type="button" class="button2" value="{L_LIKE_CLOSE}"/>
-		</form>
-	</div>
-</div>
-<!-- END switch_like_popup -->
 
 {JAVASCRIPT}
+  
+  <!--- BARRA DE NAVEGACIÓN DE FOROACTIVO --->
   
   <div class="original-navbar" style="display: none;">
     {GENERATED_NAV_BAR}
@@ -296,9 +321,9 @@
     <!-- END switch_search_box -->
   </div>
   
+  <!--- BARRA DE NAVEGACIÓN DEL FORO--->
+  
 <nav>
-
-
 
   <menu class="forum-nav">
 
@@ -319,7 +344,8 @@
   </menu>
 
   <article class="admin-nav"></article>
-
+	
+<!-- BEGIN switch_user_logged_in -->
   <article class="user-nav">
 
     <a href="/login?logout=1" tooltip="Desconectarse">
@@ -332,6 +358,7 @@
 
     <button popovertarget="notis-popover" tooltip="Notificaciones">
       <i data-lucide="bell"></i>
+      <div class="notis-alert"></div>
     </button>
 
     <a href="/profile?mode=editprofile" tooltip="Editar mi perfil">
@@ -344,11 +371,12 @@
     </a>
 
   </article>
+<!-- END switch_user_logged_in -->
 
 <!-- BEGIN switch_user_logged_out -->
-<menu class="guest-nav">
-<button popovertarget="login-popover">CONECTARSE</button>
-<button><a href="/register">REGISTRARSE</a></button>
+<menu class="guest-nav form-control">
+  <button popovertarget="login-popover">CONECTARSE</button>
+  <button><a href="/register">REGISTRARSE</a></button>
 </menu>
 <!-- END switch_user_logged_out -->
 
@@ -356,63 +384,70 @@
   
   <!----- NAV MENUS----->
   
-  <div id="forumnavmenu" class="drawer left" popover>
-  <button popovertarget="forumnavmenu" popovertargetaction="hide" class="close-button">
-    <i data-lucide="x"></i>
-  </button>
-  <menu>
-  <li>
-      <a href="/memberlist">
-        <i data-lucide="users-round"></i>
-        <span>LISTA DE MIEMBROS</span>
-      </a>
-    </li>
-    <li>
-      <a href="/groups">
-        <i data-lucide="book-user"></i>
-        <span>GRUPOS</span>
-      </a>
-      </li>
-    <li>
-      <a href="/discover">
-        <i data-lucide="search"></i>
-        <span>ACTIVIDAD</span>
-      </a>
-    </li>
-  </menu>
-</div>
+  <!----- MENU FORO ---->
   
-<div id="notis-popover" class="drawer right" popover>
-  <button popovertarget="notis-popover" popovertargetaction="hide" class="close-button">
-<i data-lucide="x"></i>
-</button>
-  <article id="notis"></article>
-</div>
+  <div id="forumnavmenu" class="drawer" popover>
+    <button popovertarget="forumnavmenu" popovertargetaction="hide" class="close-button">
+      <i data-lucide="x"></i>
+    </button>
+    <menu class="form-control column has-spacing">
+      <li class="form-control">
+        <a href="/memberlist">
+          <i data-lucide="users-round"></i>
+          <span>LISTA DE MIEMBROS</span>
+        </a>
+      </li>
+      <li class="form-control">
+        <a href="/groups">
+          <i data-lucide="book-user"></i>
+          <span>GRUPOS</span>
+        </a>
+      </li>
+      <li class="form-control">
+        <a href="/discover">
+          <i data-lucide="search"></i>
+          <span>ACTIVIDAD</span>
+        </a>
+      </li>
+    </menu>
+  </div>
+  
+  <!---- MENU NOTIFICACIONES ---->
+  
+  <div id="notis-popover" class="drawer" popover>
+    <button popovertarget="notis-popover" popovertargetaction="hide" class="close-button">
+      <i data-lucide="x"></i>
+    </button>
+    <article id="notis"></article>
+  </div>
+  
+  <!---- MENU LOGIN ---->
   
   <div id="login-popover" class="drawer" popover>
     <button popovertarget="login-popover" popovertargetaction="hide" class="close-button">
       <i data-lucide="x"></i>
     </button>
-    <form action="{S_LOGIN_ACTION}" method="post" name="form_login">
-        <menu class="stack column">
-            <li class="form-control column">
-                <label>{L_USERNAME}</label>
-                <input type="text" size="10" name="username" />
-            </li>
-            <li class="form-control column">
-                <label>{L_PASSWORD}</label>
-                <input type="password" size="10" name="password" />
-            </li>
-            <li class="form-control">
-                <input class="radio" type="checkbox" name="autologin" {AUTOLOGIN_CHECKED} />
-                <label>{L_AUTO_LOGIN}</label>
-            </li>
-
-        </menu>
+    <form action="{S_LOGIN_ACTION}" method="post" name="form_login" class="has-spacing">
+      <menu class="stack column">
+        <li class="form-control column">
+          <label>{L_USERNAME}</label>
+          <input type="text" size="10" name="username" />
+        </li>
+        <li class="form-control column">
+          <label>{L_PASSWORD}</label>
+          <input type="password" size="10" name="password" />
+        </li>
+        <li class="form-control">
+          <input class="radio" type="checkbox" name="autologin" {AUTOLOGIN_CHECKED} />
+          <label>{L_AUTO_LOGIN}</label>
+        </li>
         {S_HIDDEN_FIELDS}
-        <input type="submit" name="login" value="{L_LOGIN}" />
+        <li class="form-control">
+          <input type="submit" name="login" value="{L_LOGIN}" />
+        </li>
+      </menu>
     </form>
-</div>
+  </div>
   
   <!-----BANNER------>
   <header>
