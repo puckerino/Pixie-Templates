@@ -49,15 +49,24 @@
           {memberrow.POINTS}
         </li>
         <!-- END switch_td_point -->
-        <li>{memberrow.JOINED}</li>
-        <li>{memberrow.LASTVISIT}</li>
-        <li>{memberrow.POSTS}</li>
+        <li>
+          <span>DESDE</span>
+          <span>{memberrow.JOINED}</span>
+        </li>
+        <li>
+          <span>ÚLTIMA VISITA</span>
+          <span>{memberrow.LASTVISIT}</span>
+        </li>
+        <li>
+          <span>{memberrow.POSTS}</span>
+          <span>MENSAJES</span>
+        </li>
       </menu>
       <menu class="contact">
         <!-- BEGIN switch_td_pm -->
         <li>{memberrow.PM_IMG}</li>
         <!-- END switch_td_pm -->
-        <li><a href="{memberrow.U_VIEWPROFILE}">PERFIL</a></li>
+        <li><a href="{memberrow.U_VIEWPROFILE}" tooltip="Ver perfil"><i data-lucide="user"></i></a></li>
       </menu>
     </article>
     <!-- END memberrow -->
