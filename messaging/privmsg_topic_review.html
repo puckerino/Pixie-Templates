@@ -1,0 +1,25 @@
+<section class="privmsg-review">
+<!-- BEGIN switch_inline_mode -->
+<h2 class="page-title page-bottom">{L_TOPIC_REVIEW}</h2>
+<!-- END switch_inline_mode -->
+<section class="stack column has-spacing">
+<!-- BEGIN postrow -->
+<article class="post {postrow.ROW_CLASS}{postrow.CURRENT_MSG}">
+  <section class="postheader has-spacing grid-2-leftmax">
+    <figure class="avatar-privmsg">{postrow.POSTER_AVATAR}</figure>
+    <span class="username">{postrow.POSTER_NAME}</span>
+  </section>
+  <menu class="topic-actions topic-actions-top topic-actions-bottom">
+    <li class="title">{postrow.POST_SUBJECT_NEW}</li>
+    <li class="date">{postrow.POST_DATE}</li>
+  </menu>
+  <article class="postbody has-spacing">
+    <div class="content message">{postrow.MESSAGE}</div>
+  </article>
+</article>
+<!-- END postrow -->
+</section>
+<article class="pagination pagination-bottom">
+    {PM_PAGINATION}
+</article>
+</section>
