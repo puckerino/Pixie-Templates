@@ -1,0 +1,42 @@
+<main class="modcp">
+  <form action="{S_SPLIT_ACTION}" method="post">
+    <h2 class="page-title">{L_SPLIT_TOPIC}</h2>
+    <article class="topic-actions">
+      {L_SPLIT_TOPIC_EXPLAIN}
+    </article>
+    <menu class="stack column">
+      <li>{L_SPLIT_SUBJECT}</li>
+      <li><input type="text" name="subject" maxlength="{MAX_TOPIC_LENGTH}" /></li>
+      <li>{L_SPLIT_FORUM}</li>
+      <li>{S_FORUM_SELECT}</li>
+    </menu>
+    <menu class="topic-actions">
+      <li><input class="button" type="submit" name="split_type_all" value="{L_SPLIT_POSTS}" /></li>
+      <li><input class="button" type="submit" name="split_type_beyond" value="{L_SPLIT_AFTER}" /></li>
+    </menu>
+    
+    <section id="topicreview" class="stack column">
+      <!-- BEGIN postrow -->
+      <article class="post {postrow.ROW_CLASS}">
+        <section class="postbody">
+          <p class="right-box">{postrow.L_SELECT} {postrow.S_SPLIT_CHECKBOX}</p>
+          <h3>{postrow.POST_SUBJECT}</h3>
+          <p class="author">
+            <img src="{MINI_POST_IMG}" alt="{L_POST}" />
+            {L_POSTED}: {postrow.POST_DATE} {postrow.L_TOPIC_BY} {postrow.POSTER_NAME}
+          </p>
+          <article class="content message">
+            {postrow.MESSAGE}
+          </article>
+        </section>
+      </article>
+      <!-- END postrow -->
+    </section>
+    
+    <menu class="topic-actions page-bottom">
+      <li><input class="button" type="submit" name="split_type_all" value="{L_SPLIT_POSTS}" /></li>
+      <li><input class="button" type="submit" name="split_type_beyond" value="{L_SPLIT_AFTER}" /></li>
+      {S_HIDDEN_FIELDS}
+    </menu>
+  </form>
+</main>
