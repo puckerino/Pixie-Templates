@@ -1,0 +1,79 @@
+<main class="panel-tabs privmsgs-body">
+
+<div id="tabs" class="has-spacing">
+  <ul>
+  <li>{POST_PM_IMG}</li>
+  <li>{INBOX}</li>
+  <li>{SENTBOX}</li>
+  <li>{OUTBOX}</li>
+  <li>{SAVEBOX}</li>
+  </ul>
+</div>
+
+<form action="{S_PRIVMSGS_ACTION}" method="post">
+    <menu class="topic-actions topic-actions-top">
+
+         {S_HIDDEN_FIELDS}
+         <!-- BEGIN switch_save -->
+      <li>
+        <input class="button" type="submit" name="save" value="{L_SAVE_MSG}" />
+      </li>
+	<!-- END switch_save -->
+	<!-- BEGIN switch_move_profile -->
+     <li>
+	<input class="button" type="submit" name="moveprofile" value="{L_MOVE_PROFILE}" />
+    </li>
+	<!-- END switch_move_profile -->
+     <li>
+	<input class="button" type="submit" name="delete" value="{L_DELETE_MSG}" />
+    </li>
+              <!-- BEGIN switch_post_reply -->
+        <li>{REPLY_PM_IMG}</li>
+        <!-- END switch_post_reply -->
+    </menu>
+  
+  <section class="stack column has-spacing">
+
+    <article class="post privmsg">
+    <hgroup class="privmsg-header has-spacing grid-2-leftmax">
+        <figure class="avatar-privmsg">
+            {AVATAR_FROM}
+        </figure>
+      <section class="form-control column">
+        <span class="username">
+            {MESSAGE_FROM}
+        </span>
+         <!-- BEGIN switch_user_contact -->
+        <menu class="contact">
+                <li>{PROFILE_IMG}</li>
+                <li>{PM_IMG}</li>
+        </menu>
+        <!-- END switch_user_contact -->
+      </section>
+    </hgroup>
+    <menu class="topic-actions topic-actions-top topic-actions-bottom">
+        <li class="title">{POST_SUBJECT}</li>
+        <li class="date">{POST_DATE}</li>    
+      	<ul class="profile-icons">
+                          <!-- BEGIN switch_quote -->
+                <li>{QUOTE_PM_IMG}</li>
+                <!-- END switch_quote -->
+                 <li>{EDIT_PM_IMG}</li>
+      </ul>
+    </menu>
+	<section class="postbody has-spacing">
+
+	<article class="content message">{MESSAGE}</article>
+	</section>
+</article>
+  </section>
+
+<!-- BEGIN switch_review_box -->
+{TOPIC_REVIEW_BOX}
+<!-- END switch_review_box -->
+
+</form>
+
+
+
+ </main>
