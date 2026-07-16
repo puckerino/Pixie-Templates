@@ -1,0 +1,19 @@
+<form action="{S_PROFILE_ACTION}" method="post">
+<h2 class="page-title">{L_SEND_PASSWORD}</h2>
+  <article class="topic-actions topic-actions-top">{L_ITEMS_REQUIRED}</article>
+  <menu class="stack column">
+    <li class="form-control column">
+      <label>{L_USERNAME}</label>
+      <input type="text" name="username" value="{USERNAME}" />
+    </li>
+    <li class="form-control column">
+      <label>{L_EMAIL_ADDRESS}</label>
+      <input type="text" name="email" value="{EMAIL}" />
+    </li>
+  </menu>
+  <section class="group-buttons page-bottom">
+    {S_HIDDEN_FIELDS}
+    <input class="button" type="submit" name="submit" value="{L_SUBMIT}" />
+    <input class="button" type="reset" name="reset" value="{L_RESET}" />
+  </section>
+</form>
