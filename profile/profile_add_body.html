@@ -1,0 +1,504 @@
+<script type="text/javascript" src="{JSPWD}"></script>
+
+<!-- BEGIN switch_display_menu -->
+
+{UCP_TABS}
+
+<!-- END switch_display_menu -->
+
+<section class="ucp-panel ucp-main" id="cp-main">
+  
+  {ERROR_BOX}
+  
+  <form action="{S_PROFILE_ACTION}" {S_FORM_ENCTYPE} method="post" name="post" id="ucp">
+    
+    <!-- BEGIN switch_informations_menu -->
+    
+    <h2 class="page-title">{L_REGISTRATION_INFO}</h2>
+    
+    <article class="topic-actions topic-actions-top">{L_ITEMS_REQUIRED}</article>
+    
+    <menu class="stack column has-spacing">
+      <!-- BEGIN switch_namechange_disallowed -->
+      <li class="form-control column">
+        <label>{L_USERNAME}</label>
+        <input type="hidden" name="username" value="{USERNAME}" />
+        <strong>{USERNAME}</strong>
+        <article class="alert info">
+          <i data-lucide="info"></i>
+          Contacta con el staff para cambiar tu nombre de usuario
+        </article>
+      </li>
+      <!-- END switch_namechange_disallowed -->
+      
+      <!-- BEGIN switch_namechange_allowed -->
+      <li class="form-control column">
+        <label>{L_USERNAME}</label>
+        <input type="text" name="username" value="{USERNAME}" />
+      </li>
+      <!-- END switch_namechange_allowed -->
+      
+      <!-- BEGIN switch_emailchange_disallowed -->
+      <li class="form-control column">
+        <label>{L_EMAIL_ADDRESS}</label>
+        <input type="hidden" name="email" value="{EMAIL}" />
+        <span>{EMAIL}</span>
+        {L_INVALID_EMAIL}
+        <article class="alert info">Contacta con el staff para cambiar tu email</article>
+      </li>
+      <!-- END switch_emailchange_disallowed -->
+      
+      <!-- BEGIN switch_emailchange_allowed -->
+      <li class="form-control column">
+        <label class="obligatorio">{L_EMAIL_ADDRESS}</label>
+        <input type="text" name="email" value="{EMAIL}" />
+        {L_INVALID_EMAIL}
+      </li>
+      <!-- END switch_emailchange_allowed -->
+      
+      <!-- BEGIN switch_change_password -->
+      <li class="form-control column">
+        <label>{L_CHANGE_PASSWORD}</label>
+        <a class="button" href="{LINK_FOR_PASSWD_CHANGE}" target="_blank">{L_MODIFY}</a>
+      </li>
+      <!-- END switch_change_password -->
+    </menu>
+    
+    <!-- BEGIN switch_span_div -->
+    <!-- END switch_span_div -->
+    
+    <!-- BEGIN switch_profile_fields -->
+    
+    <h2 class="page-title">{switch_informations_menu.switch_profile_fields.L_PROFILE_FIELDS}</h2>
+    
+    <menu class="stack column has-spacing">
+      <!-- BEGIN field -->
+      <li class="form-control column">
+        <label>{switch_informations_menu.switch_profile_fields.field.NAME}</label>
+        {switch_informations_menu.switch_profile_fields.field.OBJECT}
+      </li>
+      <!-- END field -->
+    </menu>
+    
+    <!-- END switch_profile_fields -->
+    
+    <!-- BEGIN switch_awards -->
+    
+    <h2 class="page-title">{switch_informations_menu.switch_awards.L_AWARDS}</h2>
+    
+    <section class="stack column has-spacing">
+      <fieldset>
+        <dl>
+          <dt id="list_awards">{switch_informations_menu.switch_awards.AWARDS_LIST}</dt>
+        </dl>
+        <dl>
+          <dt>
+            <input id="awards_order" type="hidden" name="awards_order" value="" />
+            <input id="sort_awards" type="button" name="order" value="{switch_informations_menu.switch_awards.L_SORT}" />
+          </dt>
+        </dl>
+      </fieldset>
+      {switch_informations_menu.switch_awards.SCRIPT_SORT_AWARDS}
+    </section>
+    
+    <!-- END switch_awards -->
+    
+    <!-- BEGIN switch_register_not_display -->
+    
+    <h2 class="page-title">{L_PROFILE_INFO_NOTICE}</h2>
+    
+    <!-- BEGIN switch_unsubscribe_allowed -->
+    <menu class="stack column has-spacing">
+      <li class="form-control">
+        <input type="checkbox" name="delete_user" />
+        <label>{L_DELETE}</label>
+      </li>
+    </menu>
+    <!-- END switch_unsubscribe_allowed -->
+    
+    <!-- END switch_register_not_display -->
+    
+    <!-- BEGIN switch_profile_fields_register -->
+    <menu class="stack column has-spacing">
+      <!-- BEGIN field -->
+      <li class="form-control column">
+        <label>{switch_informations_menu.switch_profile_fields_register.field.NAME}</label>
+        {switch_informations_menu.switch_profile_fields_register.field.OBJECT}
+      </li>
+      <!-- END field -->
+    </menu>
+    <!-- END switch_profile_fields_register -->
+    
+    <h2 class="page-title">{switch_informations_menu.RGPD_ACTION_TITLE}</h2>
+    <section class="stack column has-spacing">
+      <!-- BEGIN rgpd_generate_or_download -->
+      <menu class="stack column">
+        <li>{switch_informations_menu.rgpd_generate_or_download.RGPD_ACTION_LABEL}</li>
+        <li>{switch_informations_menu.rgpd_generate_or_download.RGPD_ACTION_EXPLAIN}</li>
+        <li>
+          <a href="{switch_informations_menu.rgpd_generate_or_download.RGPD_ACTION_LINK}" class="button">
+          {switch_informations_menu.rgpd_generate_or_download.RGPD_ACTION_CONTENT}
+          </a>
+        </li>
+      </menu>
+      <!-- END rgpd_generate_or_download -->
+      <!-- BEGIN rgpd_await_export -->
+      <p>{switch_informations_menu.rgpd_await_export.RGPD_AWAIT_EXPORT}</p>
+      <!-- END rgpd_await_export -->
+    </section>
+    <!-- END switch_informations_menu -->
+    
+    <!-- BEGIN switch_confirm_password -->
+    
+    <h2 class="page-title">{L_REGISTRATION_INFO}</h2>
+    
+    <menu class="stack column has-spacing">
+      <li class="form-control column">
+        <label>{L_CURRENT_PASSWORD}</label>
+        <input type="password" name="cur_password" value="{CUR_PASSWORD}" />
+      </li>
+    
+    <!-- END switch_confirm_password -->
+    
+    <!-- BEGIN switch_confirm_password_new -->
+        <li class="form-control column">
+          <label>{L_NEW_PASSWORD}</label>
+          <input type="password" name="new_password" value="{NEW_PASSWORD}" maxlength="64" />
+        </li>
+        <li class="form-control column">
+          <label>{L_CONFIRM_PASSWORD}</label>
+          <input type="password" name="password_confirm" value="{PASSWORD_CONFIRM}" maxlength="64" />
+          <input type="hidden" name="change_password" value="change_password" />
+        </li>
+
+    <!-- END switch_confirm_password_new -->
+	</menu>
+    
+    <!-- BEGIN switch_preferences_menu -->
+    
+    <h2 class="page-title">{L_PREFERENCES}</h2>
+    
+    <section class="stack column switch-preferences has-spacing">
+
+      <menu>
+        <li>{L_PUBLIC_VIEW_EMAIL}</li>
+        <li class="form-control">
+          <input type="radio" name="viewemail" value="2" {VIEW_EMAIL_FORM} />
+          <label>{L_YES}</label>
+          <!-- BEGIN switch_enable_mail_view -->
+          <li class="form-control">
+            <input type="radio" name="viewemail" value="2" {VIEW_EMAIL_FORM} />
+            <label>{L_FORM}</label>
+          </li>
+          <li class="form-control">
+            <input type="radio" name="viewemail" value="1" {VIEW_EMAIL_MAILTO} />
+            <label>{L_MAILTO}</label>
+          </li>
+          <!-- END switch_enable_mail_view -->
+          <li class="form-control">
+            <input type="radio" name="viewemail" value="0" {VIEW_EMAIL_NO} />
+            <label>{L_NO}</label>
+          </li>
+        </li>
+      </menu>
+      <!-- BEGIN switch_view_pm -->
+      <menu>
+        <li>{L_PUBLIC_VIEW_MP}</li>
+        <li class="form-control">
+          <input type="radio" name="view_pm" value="1" {VIEW_MP_YES} />
+          <label>{L_YES}</label>
+        </li>
+        <li class="form-control">
+          <input type="radio" name="view_pm" value="0" {VIEW_MP_NO} />
+          <label>{L_NO}</label>
+        </li>
+      </menu>
+      <!-- END switch_view_pm -->
+      <!-- BEGIN switch_profile_advanced -->
+            <menu>
+        <li>{switch_preferences_menu.switch_profile_advanced.L_ALLOW_PROFILE_MSGS}</li>
+        <li class="form-control">
+          <input type="radio" name="profilemsgs" value="2" {switch_preferences_menu.switch_profile_advanced.PROFILE_MSGS_ALL} />
+          <label>{L_ALL_USERS}</label>
+        </li>
+        <li class="form-control">
+          <input type="radio" name="profilemsgs" value="1" {switch_preferences_menu.switch_profile_advanced.PROFILE_MSGS_FRIENDS} />
+          <label>{L_MY_FRIENDS}</label>
+        </li>
+        <li class="form-control">
+          <input type="radio" name="profilemsgs" value="0" {switch_preferences_menu.switch_profile_advanced.PROFILE_MSGS_NONE} />
+          <label>{L_NO_ONE}</label>
+        </li>
+        <li class="form-control">
+          <input type="radio" name="profilemsgs" value="-1" {switch_preferences_menu.switch_profile_advanced.PROFILE_MSGS_HIDE} />
+          <label>{L_HIDE_TAB}</label>
+        </li>
+      </menu>
+      <!-- END switch_profile_advanced -->
+            <menu>
+        <li>{L_NEWSLETTER_ACCEPT}</li>
+        <li class="form-control">
+          <input type="radio" name="newsletter" value="1" {NEWSLETTER_YES} />
+          <label>{L_YES}</label>
+        </li>
+        <li class="form-control">
+          <input type="radio" name="newsletter" value="0" {NEWSLETTER_NO} />
+          <label>{L_NO}</label>
+        </li>
+      </menu>
+      <!-- BEGIN display_newsletter_auto -->
+            <menu>
+        <li>{L_NEWSLETTER_AUTO_ACCEPT}</li>
+        <li class="form-control">
+          <input type="radio" name="newsletter_auto" value="1" {NEWSLETTER_AUTO_YES} />
+          <label>{L_YES}</label>
+        </li>
+        <li class="form-control">
+          <input type="radio" name="newsletter_auto" value="0" {NEWSLETTER_AUTO_NO} />
+          <label>{L_NO}</label>
+        </li>
+      </menu>
+      <!-- END display_newsletter_auto -->
+            <menu>
+        <li>{L_HIDE_USER}</li>
+        <li class="form-control">
+          <input type="radio" name="hideonline" value="1" {HIDE_USER_YES} />
+          <label>{L_YES}</label>
+        </li>
+        <li class="form-control">
+          <input type="radio" name="hideonline" value="0" {HIDE_USER_NO} />
+          <label>{L_NO}</label>
+        </li>
+      </menu>
+            <menu>
+        <li>{L_NOTIFY_ON_REPLY}</li>
+        <li class="form-control">
+          <input type="radio" name="notifyreply" value="1" {NOTIFY_REPLY_YES} />
+          <label>{L_YES}</label>
+        </li>
+        <li class="form-control">
+          <input type="radio" name="notifyreply" value="0" {NOTIFY_REPLY_NO} />
+          <label>{L_NO}</label>
+        </li>
+      </menu>
+      <!-- BEGIN switch_can_disable_mass_pm -->
+            <menu>
+        <li>{L_ENABLE_MASS_PM}</li>
+        <li class="form-control">
+          <input type="radio" name="allow_mass_pm" value="4" {ALLOW_MASS_PM_NOTIFY_CHECKED} />
+          <label>{L_YES}</label>
+        </li>
+        <li class="form-control">
+          <input type="radio" name="allow_mass_pm" value="2" {ALLOW_MASS_PM_CHECKED} />
+          <label>{L_NO}</label>
+        </li>
+       <li class="form-control">
+         <input type="radio" name="allow_mass_pm" value="0" {DISABLE_MASS_PM_CHECKED} />
+         <label>{L_NO_MASS_PM}</label>
+        </li>
+      </menu>
+      <!-- END switch_can_disable_mass_pm -->
+      <!-- BEGIN switch_notify_subscriptions -->
+            <menu>
+        <li>{L_NOTIFY_SUBSCRIPTIONS}</li>
+        <li class="form-control">
+          <input type="radio" name="notify_subscriptions" value="1" {NOTIFY_SUBSCRIPTIONS_YES} />
+          <label>{L_YES}</label>
+        </li>
+        <li class="form-control">
+          <input type="radio" name="notify_subscriptions" value="0" {NOTIFY_SUBSCRIPTIONS_NO} />
+          <label>{L_NO}</label>
+        </li>
+      </menu>
+      <!-- END switch_notify_subscriptions -->
+            <menu>
+        <li>{L_POPUP_ON_PRIVMSG}</li>
+        <li class="form-control">
+          <input type="radio" name="popup_pm" value="1" {POPUP_PM_YES} />
+          <label>{L_YES}</label>
+        </li>
+        <li class="form-control">
+          <input type="radio" name="popup_pm" value="0" {POPUP_PM_NO} />
+          <label>{L_NO}</label>
+        </li>
+      </menu>
+            <menu>
+        <li>{L_NOTIFY_POST_PREVENT}</li>
+        <li class="form-control">
+          <input type="radio" name="post_prevent" value="1" {POST_PREVENT_YES} />
+          <label>{L_YES}</label>
+        </li>
+        <li class="form-control">
+          <input type="radio" name="post_prevent" value="0" {POST_PREVENT_NO} />
+          <label>{L_NO}</label>
+        </li>
+      </menu>
+      <!-- BEGIN switch_report -->
+            <menu>
+        <li>{switch_preferences_menu.switch_report.L_NO_REPORT_POPUP}</li>
+        <li class="form-control">
+          <input type="radio" name="no_report_popup" value="0" {switch_preferences_menu.switch_report.NO_REPORT_POPUP_YES} />
+          <label>{L_YES}</label>
+        </li>
+        <li class="form-control">
+          <input type="radio" name="no_report_popup" value="1" {switch_preferences_menu.switch_report.NO_REPORT_POPUP_NO} />
+          <label>{L_NO}</label>
+        </li>
+      </menu>
+      <!-- END switch_report -->
+      <!-- BEGIN switch_signature -->
+            <menu>
+        <li>{switch_preferences_menu.switch_signature.L_ALWAYS_ADD_SIGNATURE}</li>
+        <li class="form-control">
+          <input type="radio" name="attachsig" value="1" {switch_preferences_menu.switch_signature.ALWAYS_ADD_SIGNATURE_YES} />
+          <label>{L_YES}</label>
+        </li>
+        <li class="form-control">
+          <input type="radio" name="attachsig" value="0" {switch_preferences_menu.switch_signature.ALWAYS_ADD_SIGNATURE_NO} />
+          <label>{L_NO}</label>
+        </li>
+      </menu>
+      <!-- END switch_signature -->
+      <!-- BEGIN switch_bbcode_allowed -->
+            <menu>
+        <li>{switch_preferences_menu.switch_bbcode_allowed.L_ALWAYS_ALLOW_BBCODE}</li>
+        <li class="form-control">
+          <input type="radio" name="allowbbcode" value="1" {switch_preferences_menu.switch_bbcode_allowed.ALWAYS_ALLOW_BBCODE_YES} />
+          <label>{L_YES}</label>
+        </li>
+        <li class="form-control">
+          <input type="radio" name="allowbbcode" value="0" {switch_preferences_menu.switch_bbcode_allowed.ALWAYS_ALLOW_BBCODE_NO} />
+          <label>{L_NO}</label>
+        </li>
+      </menu>
+      <!-- END switch_bbcode_allowed -->
+      <!-- BEGIN switch_html_allowed -->
+            <menu>
+        <li>{switch_preferences_menu.switch_html_allowed.L_ALWAYS_ALLOW_HTML}</li>
+        <li class="form-control">
+          <input type="radio" name="allowhtml" value="1" {switch_preferences_menu.switch_html_allowed.ALWAYS_ALLOW_HTML_YES} />
+          <label>{L_YES}</label>
+        </li>
+        <li class="form-control">
+          <input type="radio" name="allowhtml" value="0" {switch_preferences_menu.switch_html_allowed.ALWAYS_ALLOW_HTML_NO} />
+          <label>{L_NO}</label>
+        </li>
+      </menu>
+      <!-- END switch_html_allowed -->
+      <!-- BEGIN switch_smilies_allowed -->
+            <menu>
+        <li>{switch_preferences_menu.switch_smilies_allowed.L_ALWAYS_ALLOW_SMILIES}</li>
+        <li class="form-control">
+          <input type="radio" name="allowsmilies" value="1" {switch_preferences_menu.switch_smilies_allowed.ALWAYS_ALLOW_SMILIES_YES} />
+          <label>{L_YES}</label>
+        </li>
+        <li class="form-control">
+          <input type="radio" name="allowsmilies" value="0" {switch_preferences_menu.switch_smilies_allowed.ALWAYS_ALLOW_SMILIES_NO} />
+          <label>{L_NO}</label>
+        </li>
+      </menu>
+      <!-- END switch_smilies_allowed -->
+
+    <menu class="stack-column">
+      <li class="form-control column">
+        <label>{L_BOARD_LANGUAGE}</label>
+        {LANGUAGE_SELECT}
+      </li>
+      <li class="form-control column">
+        <label>{L_TIMEZONE}</label>
+        {TIMEZONE_SELECT}
+      </li>
+      <li class="form-control column">
+        <label>{L_DATE_FORMAT}</label>
+        {DATE_FORMAT}
+      </li>
+    </menu>
+  </section>
+				<!-- END switch_preferences_menu -->
+
+				<!-- BEGIN switch_avatar_block -->
+      <h2 class="page-title">{L_AVATAR_PANEL}</h2>
+  <section class="grid-2-leftmax has-spacing">
+
+    <figure class="avatar-post">
+      {AVATAR}
+    </figure>
+    <menu class="stack column">
+      <li class="form-control">
+        <input type="checkbox" name="avatardel" />
+        {L_DELETE_AVATAR}
+      </li>
+      <!-- BEGIN switch_avatar_local_upload -->
+      <li class="form-control column">
+        <label>{L_UPLOAD_AVATAR_FILE}</label>
+        <input type="file" name="avatar" />
+      </li>
+      <!-- END switch_avatar_local_upload -->
+      <!-- BEGIN switch_avatar_remote_upload -->
+      <li class="form-control column">
+        <label>{L_UPLOAD_AVATAR_URL}</label>
+        <span>{L_UPLOAD_AVATAR_URL_EXPLAIN}</span>
+        <input type="text" name="avatarurl" />
+      </li>
+      <!-- END switch_avatar_remote_upload -->
+      <!-- BEGIN switch_avatar_remote_link -->
+      <li class="form-control column">
+        <label>{L_LINK_REMOTE_AVATAR}</label>
+        <span>{L_LINK_REMOTE_AVATAR_EXPLAIN}</span>
+        <input type="text" name="avatarremoteurl" />
+      </li>
+      <!-- END switch_avatar_remote_link -->
+    </menu>
+  </section>
+<!-- END switch_avatar_block -->
+
+				<section class="group-buttons page-bottom">
+					{S_HIDDEN_FIELDS}
+					<input class="button" type="submit" name="submit" value="{L_SUBMIT}" />
+					<input class="button" type="reset" name="reset" value="{L_RESET}" />
+				</section>
+			</form>
+
+
+  </section>
+
+
+<script type="text/javascript">
+$(function(){
+    $('input[name=reset]').click(function(){
+        $("#pwd_good,#pwd_middle,#pwd_bad").hide();
+    });
+    $('input[name=new_password],input[name=username]').keyup(function() {
+        if ( $('input[name=new_password]').val() != "" )
+        {
+            var level = passwordStrength($('input[name=new_password]').val(),$('input[name=username]').val());
+        switch(level)
+        {
+            case 'bad' :
+                $("#pwd_middle,#pwd_good").hide();
+                $("#pwd_bad").show();
+                break;
+            case 'good' :
+                $("#pwd_good,#pwd_bad").hide();
+                $("#pwd_middle").show();
+                break;
+            case 'strong' :
+                $("#pwd_middle,#pwd_bad").hide();
+                $("#pwd_good").show();
+                break;
+            }
+        }
+        else
+        {
+            $("#pwd_middle,#pwd_good,#pwd_bad").hide();
+        }
+    });
+});
+
+$(document).ready(function() {
+	var contact_fields = document.querySelectorAll("[id*='profile_field_3_'],[id^='profile_field_3_']");
+	for (var i = 0; i < contact_fields.length; i++) {
+		contact_fields[i].addEventListener('focusout', validateField, false);
+	}
+});
+</script>
