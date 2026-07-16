@@ -1,0 +1,61 @@
+<main class="groupcp">
+  <h2 class="page-title">{L_USERGROUPS}</h2>
+  <!-- BEGIN switch_groups_joined -->
+
+    <!-- BEGIN switch_groups_member -->
+    <h3 class="page-subtitle has-spacing page-top">{L_GROUP_MEMBERSHIP_DETAILS}</h3>
+    <article class="form-control column has-spacing">
+      {GROUP_MEMBER_SELECT_NEW}
+    </article>
+    <!-- END switch_groups_member -->
+    <!-- BEGIN switch_groups_pending -->
+    <h3 class="page-subtitle has-spacing page-top page-bottom">
+      {L_PENDING_GROUPS}
+    </h3>
+    <article class="form-control column has-spacing">
+      {GROUP_PENDING_SELECT_NEW}
+    </article>
+    <!-- END switch_groups_pending -->
+
+  <!-- END switch_groups_joined -->
+  <!-- BEGIN switch_groups_remaining -->
+
+    <h3 class="page-subtitle has-spacing page-top page-bottom">
+      {L_JOIN_A_GROUP}
+    </h3>
+    <form action="{U_USERGROUP_ACTION}" method="get">
+      <menu class="stack form-control">
+        <li>
+          <label>{L_SELECT_A_GROUP}</label>
+        </li>
+        <li>{GROUP_LIST_SELECT}</li>
+        <li>
+          <input class="button" type="submit" value="{L_VIEW_INFORMATION}" />
+        </li>
+        {S_HIDDEN_FIELDS}
+      </menu>
+    </form>
+
+  <!-- END switch_groups_remaining -->
+  <!-- BEGIN switch_display_groups_all -->
+
+    <h2 class="page-title page-top page-bottom">
+      {switch_display_groups_all.L_ALL_GROUPS}
+    </h2>
+    <section class="stack column has-spacing">
+      <!-- BEGIN group_details -->
+      <article class="group" {switch_display_groups_all.group_details.GROUP_STYLE}>
+      <figure class="group-icon">{switch_display_groups_all.group_details.GROUP_ICON}</figure>
+      <a class="usr_grp_clr" href="{switch_display_groups_all.group_details.U_GROUP}" {switch_display_groups_all.group_details.GROUP_STYLE}>
+        {switch_display_groups_all.group_details.GROUP_NAME}
+      </a>
+      <span class="members">
+        {switch_display_groups_all.group_details.NB_GROUP_MEMBERS}
+      </span>
+      </article>
+      <!-- END group_details -->
+    </section>
+
+  <!-- END switch_display_groups_all -->
+</main>
+
