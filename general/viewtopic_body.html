@@ -33,7 +33,6 @@
   
   <!-- BEGIN postrow -->
   <!-- BEGIN displayed -->
-  <a href="{postrow.displayed.POST_URL}"></a>
   <article id="p{postrow.displayed.U_POST_ID}" class="post post--{postrow.displayed.U_POST_ID} {postrow.displayed.GROUP}">
     
     <section class="postbody">
@@ -57,7 +56,7 @@
       </section>
       
       <section class="data">
-        <a class="permalink" href="{postrow.displayed.POST_URL}"><i data-lucide="link"></i></a>
+        <a class="permalink" href="{postrow.displayed.POST_URL}" id="{postrow.displayed.U_POST_ID}" tooltip="#{postrow.displayed.U_POST_ID}"><i data-lucide="link"></i></a>
         <span class="date">{postrow.displayed.POST_DATE_NEW}</span>
         <ul class="profile-icons">
           <li>{postrow.displayed.QUOTE_IMG}</li>
