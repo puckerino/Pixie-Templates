@@ -1,0 +1,32 @@
+<main class="topic-review">
+<!-- BEGIN switch_inline_mode -->
+    <h2 class="page-title">{L_TOPIC_REVIEW}</h2>
+
+<!-- END switch_inline_mode -->
+
+<section class="stack column has-spacing">
+<!-- BEGIN postrow -->
+	<!-- BEGIN displayed -->
+     <a href="{postrow.displayed.POST_ID}"></a>
+     <article class="post">
+        <section class="postbody">
+         <section class="postheader has-spacing">
+            <h2 class="username">{postrow.displayed.POSTER_NAME}</h2>
+        </section>
+            <section class="data has-spacing">
+                <span class="post-number">
+                    {postrow.displayed.POST_ID}
+                </span>
+                <span class="date">
+                    {postrow.displayed.POST_DATE}
+                </span>
+            </section>
+            <article class="content message has-spacing">
+                {postrow.displayed.MESSAGE}
+            </article>
+            </section>
+    </article>
+	<!-- END displayed -->
+<!-- END postrow -->
+ </section>
+</main>
