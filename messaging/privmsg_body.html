@@ -1,0 +1,79 @@
+<main class="panel-tabs privmsgs-body">
+
+<div id="tabs" class="has-spacing">
+  <ul>
+  <li>{POST_PM_IMG}</li>
+  <li>{INBOX}</li>
+  <li>{SENTBOX}</li>
+  <li>{OUTBOX}</li>
+  <li>{SAVEBOX}</li>
+  </ul>
+</div>
+
+<form action="{S_PRIVMSGS_ACTION}" method="post" name="privmsg_list">
+  <menu class="grid-2-leftmax page-top">
+    <!-- BEGIN switch_box_size_notice -->
+    <li>{BOX_SIZE_STATUS}</li>
+    <!-- END switch_box_size_notice -->
+    <li class="form-control">
+      <select name="msgdays">
+        {S_SELECT_MSG_DAYS}
+      </select>
+      <input class="button" type="submit" name="submit_msgdays" value="{L_GO}" />
+    </li>
+  </menu>
+      <menu class="topic-actions topic-actions-top">
+        <li><a class="button" href="javascript:select_switch_privmsg(true);">{L_MARK_ALL}</a></li>
+        <li><a class="button" href="javascript:select_switch_privmsg(false);">{L_UNMARK_ALL}</a></li>
+        {S_HIDDEN_FIELDS}
+        <!-- BEGIN switch_save -->
+      	<li><input class="button" type="submit" name="save" value="{L_SAVE_MARKED}" /></li>
+	<!-- END switch_save -->
+        <!-- BEGIN switch_move_profile -->
+        <li><input class="button" type="submit" name="moveprofile" value="{L_MOVE_PROFILE_MARKED}" /></li>
+	<!-- END switch_move_profile -->
+	<!-- BEGIN switch_mark_as_read -->
+        <li><input class="button" type="submit" name="mark_as_read" value="{switch_mark_as_read.L_MARK_AS_READ}" /></li>
+        <li><input class="button" type="submit" name="mark_as_unread" value="{switch_mark_as_read.L_MARK_AS_UNREAD}" /></li>
+	<!-- END switch_mark_as_read -->
+        <li><input class="button" type="submit" name="delete" value="{L_DELETE_MARKED}" /></li>
+        <li><input class="button" type="submit" name="deleteall" value="{L_DELETE_ALL}" /></li>
+      </menu>
+
+
+
+
+<section class="pmlist stack column has-spacing">
+  <!-- BEGIN listrow -->
+  <article class="pm list-item">
+    <figure class="icon">
+      {listrow.PRIVMSG_ICON}
+      <img src="{listrow.PRIVMSG_FOLDER_IMG}" />
+    </figure>
+    <a href="{listrow.U_READ}" class="title">{listrow.SUBJECT}</a>
+    <span class="from form-control">
+      <i data-lucide="user-round-pen"></i>
+      {listrow.FROM}
+    </span>
+    <span class="date form-control">
+      <i data-lucide="clock"></i>
+      {listrow.DATE}
+    </span>
+    <input type="checkbox" name="mark[]2" value="{listrow.S_MARK_ID}" />
+  </article>
+  <!-- END listrow -->
+  
+  <!-- BEGIN switch_no_messages -->
+  <article class="alert info">
+    <i data-lucide="info"></i>
+    {L_NO_MESSAGES}
+  </article>
+  <!-- END switch_no_messages -->
+</section>
+
+
+<article class="pagination pagination-bottom">{PAGINATION}</article>
+</form>
+
+
+</main>
