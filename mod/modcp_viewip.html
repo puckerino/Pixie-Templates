@@ -1,0 +1,47 @@
+<main class="modcp">
+  <h2 class="page-title">{L_TITLE}</h2>
+  <menu class="stack column has-spacing">
+    <li class="form-control column"><label>{L_SUBJECT}</label>{SUBJECT}</li>
+    <li class="form-control column"><label>{L_POSTER}</label>{POSTER}</li>
+    <li class="form-control column"><label>{L_IP}</label><span class="stack">{IP1} [ {IP2} ]</span></li>
+    <li class="form-control column"><label>{L_POSTED}</label>{POSTED}</li>
+  </menu>
+  <h2 class="page-title">{L_IP_INFO}</h2>
+  <section class="stack column has-spacing">
+    <h3 class="page-subtitle">{L_THIS_POST_IP}</h3>
+    <menu class="grid-3 list-item">
+      <li>{IP}</li>
+      <li>{POSTS}</li>
+      <li><a class="button" href="{U_LOOKUP_IP}">{L_LOOKUP_IP}</a></li>
+    </menu>
+  </section>
+<section class="stack column has-spacing">
+  <h3 class="page-subtitle">{L_OTHER_USERS}</h3>
+  <!-- BEGIN userrow -->
+  <menu class="grid-3 list-item {userrow.ROW_CLASS}">
+    <li><a href="{userrow.U_PROFILE}">{userrow.USERNAME}</a></li>
+    <li>{userrow.POSTS}</li>
+    <li><a class="button" tooltip="{userrow.L_SEARCH_POSTS}" href="{userrow.U_SEARCHPOSTS}">{userrow.L_SEARCH}</a></li>
+  </menu>
+  <!-- END userrow -->
+  </section>
+
+  <section class="stack column has-spacing">
+    <h3 class="page-subtitle">{L_OTHER_IPS}</h3>
+    <!-- BEGIN iprow -->
+    <menu class="grid-3 list-item">
+      <li>{iprow.IP}</li>
+      <li>{iprow.POSTS}</li>
+      <li><a class="button" href="{iprow.U_LOOKUP_IP}">{L_LOOKUP_IP}</a></li>
+    </menu>
+    <!-- END iprow -->
+  </section>
+<h2 class="page-title">{L_PREVIEW}</h2>
+  <section class="stack column has-spacing">
+    <article class="post">
+      <article class="content message">
+        {PREVIEW_NEW}
+      </article>
+    </article>
+  </section>
+</main>
