@@ -1,0 +1,31 @@
+<section class="lasttopics">
+  <span class="tablon-title">ULTIMOS TEMAS</span>
+  <div class="wrap">
+  <!-- BEGIN classical_row -->
+  <!-- BEGIN recent_topic_row -->
+  <article class="lasttopic stack column">    
+    
+    <span class="date">
+      {classical_row.recent_topic_row.S_POSTTIME}
+    </span>
+    <a class="title" href="{classical_row.recent_topic_row.U_TITLE}">
+      {classical_row.recent_topic_row.L_TITLE}
+    </a>
+    
+    <!-- BEGIN switch_poster -->
+    <a class="username" href="{classical_row.recent_topic_row.switch_poster.U_POSTER}">
+      {classical_row.recent_topic_row.switch_poster.S_POSTER}
+    </a>
+    <!-- END switch_poster -->
+    
+    <!-- BEGIN switch_poster_guest -->
+    <span class="username guest">
+      {classical_row.recent_topic_row.switch_poster_guest.S_POSTER}
+    </span>
+    <!-- END switch_poster_guest -->
+    
+    </article>
+    <!-- END recent_topic_row -->
+    <!-- END classical_row -->
+  </div>
+</section>
