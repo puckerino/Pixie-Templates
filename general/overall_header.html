@@ -36,7 +36,8 @@
       "styles/pixie-icons.css",
       "styles/pixie-elements.css",
       "styles/pixie-popover.css",
-      "styles/pixie-tooltips.css"
+      "styles/pixie-tooltips.css",
+      "styles/pixie-chatbox.css"
     ],
 
     body: [
@@ -336,6 +337,12 @@
     <li>
 	<button id="themeToggle" class="theme-btn" type="button"></button>
     </li>
+    
+    <li>
+      <button popovertarget="byrnechatbox">
+        CHATBOX
+      </button>
+    </li>
 
   </menu>
   <a class="nav-logo" href="{U_INDEX}">{L_INDEX}</a>
@@ -364,7 +371,11 @@
     <a href="/profile?mode=editprofile" tooltip="Editar mi perfil">
       <i data-lucide="settings"></i>
     </a>
-
+    
+    <button popovertarget="switcheroo-popover">
+      <i data-lucide="refresh-ccw"></i>
+    </button>
+    
     <a class="link-perfil" tooltip="Perfil">
       <span class="username"></span>
       <figure class="avatar-nav"></figure>
@@ -381,8 +392,21 @@
 <!-- END switch_user_logged_out -->
 
 </nav>
+
+<div id="byrnechatbox" class="drawer" popover>
+    <object data="/chatbox/?page=front&" scrolling="yes" style="min-height: 400px" width="100%" height="100%" type="text/html"></object>
+</div>
+
   
   <!----- NAV MENUS----->
+  
+    <!----- MENU SWITCHEROO ---->
+  <div id="switcheroo-popover" class="drawer" popover>
+    <button popovertarget="switcheroo-popover" popovertargetaction="hide" class="close-button">
+      <i data-lucide="x"></i>
+    </button>
+    <div id="switcheroo" class="switcheroo"></div>
+  </div>
   
   <!----- MENU FORO ---->
   
