@@ -1,0 +1,27 @@
+<main class="modcp">
+  <form action="{S_MODCP_ACTION}" method="post">
+    <h2 class="page-title">{MESSAGE_TITLE}</h2>
+    <menu class="stack column">
+      <li>
+        {L_MOVE_TO_FORUM}
+      </li>
+      <li>
+        {S_FORUM_SELECT}
+      </li>
+      <!-- BEGIN switch_leave_shadow -->
+      <li class="form-control">
+        <input name="move_leave_shadow" type="checkbox" />
+        <label>{L_LEAVESHADOW}</label>
+      </li>
+      <!-- END switch_leave_shadow -->
+    </menu>
+    <article class="topic-actions">
+      {MESSAGE_TEXT}
+    </article>
+    <menu class="stack">
+      {S_HIDDEN_FIELDS}
+      <li><input class="button" type="submit" name="confirm" value="{L_YES}" /></li>
+      <li><input class="button" type="submit" name="cancel" value="{L_NO}" /></li>
+    </menu>
+  </form>
+</main>
