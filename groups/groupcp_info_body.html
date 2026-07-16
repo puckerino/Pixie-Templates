@@ -1,0 +1,135 @@
+<main class="groupcp">
+  <h2 class="page-title">{GROUP_NAME}</h2>
+      <!-- BEGIN switch_count_users_group -->
+    <h3 class="page-subtitle">{switch_count_users_group.GROUP_COUNT} MIEMBROS</h3>
+    <!-- END switch_count_users_group -->
+      {GROUP_DETAILS}
+  <article class="description">{GROUP_DESC}</article>
+  <form action="{S_GROUPCP_ACTION}" method="post" name="post">
+    <menu class="topic-actions topic-actions-top form-control column">
+      <!-- BEGIN switch_mod_option -->
+      <li class="grid-2-rightmax">
+        <input type="text" id="username" name="username" />
+        <section class="grid-2">
+          <input class="button" type="submit" name="add" value="{L_ADD_MEMBER}" />
+	<input class="button" type="button" id="find_user" value="{L_FIND_USERNAME}" />
+        </section>
+      </li>
+      <li>
+      <input class="button" type="submit" name="remove" value="{L_REMOVE_SELECTED}" />
+      </li>
+      {S_HIDDEN_FIELDS}
+      <!-- END switch_mod_option -->
+    </menu>
+    {PENDING_USER_BOX}
+    <article class="pagination">{PAGINATION}</article>
+  </form>
+  <form action="{S_GROUPCP_ACTION}" method="post">
+    <section class="stack column has-spacing">
+      <menu class="group-buttons">
+        <!-- BEGIN switch_subscribe_group_input -->
+        <input class="button" type="submit" name="joingroup" value="{L_JOIN_GROUP}" />
+        <!-- END switch_subscribe_group_input -->
+        <!-- BEGIN switch_unsubscribe_group_input -->
+        <input class="button" type="submit" name="unsub" value="{L_UNSUBSCRIBE_GROUP}" />
+        <!-- END switch_unsubscribe_group_input -->
+      </menu>
+    </section>
+    <!-- BEGIN switch_mod_option -->
+    <menu class="topic-actions topic-actions-bottom grid-4">
+      <li class="form-control">
+        <input type="radio" name="group_type" value="{S_GROUP_OPEN_TYPE}" {S_GROUP_OPEN_CHECKED} {S_GROUP_OPEN_DISABLED} />
+        <label>{L_GROUP_OPEN}</label>
+      </li>
+      <li class="form-control">
+        <input type="radio" name="group_type" value="{S_GROUP_CLOSED_TYPE}" {S_GROUP_CLOSED_CHECKED} />
+        <label>{L_GROUP_CLOSED}</label>
+      </li>
+      <li class="form-control">
+        <input type="radio" name="group_type" value="{S_GROUP_HIDDEN_TYPE}" {S_GROUP_HIDDEN_CHECKED} />
+        <label>{L_GROUP_HIDDEN}</label>
+      </li>
+      <li>
+        <input class="button" type="submit" name="groupstatus" value="{L_UPDATE}" />
+      </li>
+    </menu>
+        {S_HIDDEN_FIELDS}
+    <!-- END switch_mod_option -->
+
+  </form>
+  <form action="{S_GROUPCP_ACTION}" method="post" name="post">
+    <section class="stack column">
+      <h2 class="page-title">{L_GROUP_MODERATOR}</h2>
+      <section class="stack column has-spacing">
+      <article class="list-item mod">
+        <!-- BEGIN switch_anonymous_auth -->
+        <menu class="contact form-control">
+          <li>{MOD_PM_IMG}</li>
+          <li><a href="{U_MOD_VIEWPROFILE}"><i data-lucide="user" tooltip="Ver Perfil"></i></a></li>
+        </menu>
+        <!-- END switch_anonymous_auth -->
+        <a class="username" href="{U_MOD_VIEWPROFILE}">{MOD_USERNAME}</a>
+        <span class="posts">{MOD_POSTS} POSTS</span>
+        <!-- BEGIN switch_mod_option -->
+        <!-- END switch_mod_option -->
+      </article>
+      </section>
+      <h2 class="page-title">{L_GROUP_MEMBERS}</h2>
+      <section class="stack column has-spacing">
+        <!-- BEGIN member_row -->
+        <article class="list-item">
+          <menu class="contact form-control">
+          <li>{member_row.PM_IMG}</li>
+          <li>
+            <a href="{member_row.U_VIEWPROFILE}">
+              <i data-lucide="user" tooltip="Ver Perfil"></i>
+            </a>
+          </li>
+        </menu>
+          <a class="username" href="{member_row.U_VIEWPROFILE}">{member_row.USERNAME}</a>
+          <span class="posts">{member_row.POSTS} POSTS</span>
+          <!-- BEGIN switch_mod_option -->
+          <input type="checkbox" name="members[]" value="{member_row.USER_ID}" />
+          <!-- END switch_mod_option -->
+        </article>
+        <!-- END member_row -->
+        <!-- BEGIN switch_no_members -->
+        <article class="alert info">
+          {L_NO_MEMBERS}
+        </article>
+        <!-- END switch_no_members -->
+        <!-- BEGIN switch_hidden_group -->
+        <article class="list-item">
+          {L_HIDDEN_MEMBERS}
+        </article>
+        <!-- END switch_hidden_group -->
+      </section>
+    </section>
+  </form>
+</main>
+
+
+<!-- BEGIN switch_mod_option -->
+<div id="find_username" class="jqmWindow"></div>
+
+<script src="{JQUERY_DIR}jqmodal/jqmodal.js" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+	$(document).ready(function(){
+		function find_username(fieldname) {
+			$.get('{U_SEARCH_USER}&fieldname=' + fieldname + '&time=' + timestamp(), '',
+				function(data){
+					$('#find_username').html(data).jqmShow();
+					$('.jqmOverlay').bgiframe();
+					$('#find_username').bgiframe();
+				});
+			return false;
+		}
+		$('#find_user').click(function(){
+			return find_username('username');
+		});
+		$('#find_username').jqm({toTop: true});
+	});
+//]]>
+</script>
+<!-- END switch_mod_option -->
