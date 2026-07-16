@@ -1,0 +1,87 @@
+<main class="modcp">
+<form name="manage" action="{S_MODCP_ACTION}" method="post">
+  <h2 class="page-title">{L_MOD_CP}</h2>
+  <article class="topic-actions">{L_MOD_CP_EXPLAIN}</article>
+    <article class="pagination pagination-top">{PAGE_NUMBER}{PAGINATION}</article>
+    <section class="stack column">
+      <!-- BEGIN topicrow -->
+      <article class="topic {topicrow.ROW_CLASS}" status="{topicrow.L_TOPIC_FOLDER_ALT}">
+        <figure class="icon">
+          {topicrow.ICON}
+        </figure>
+        <span class="topic-type">
+          {topicrow.TOPIC_TYPE}
+        </span>
+        <a class="title" href="{topicrow.U_VIEW_TOPIC}">
+          {topicrow.TOPIC_TITLE}
+        </a>
+        <a class="author username" href="{topicrow.U_VIEW_AUTHOR}">
+          {topicrow.TOPIC_AUTHOR}
+        </a>
+        <menu class="data">
+          <li>{topicrow.REPLIES} <span>POSTS</span></li>
+        </menu>
+        <section class="lastpost">
+          {topicrow.LAST_POST_TIME}
+        </section>
+        <input type="checkbox" name="topic_id_list[]" value="{topicrow.TOPIC_ID}" />
+      </article>
+      <!-- END topicrow -->
+    </section>
+ 
+  <article class="pagination pagination-bottom">{PAGE_NUMBER}{PAGINATION}</article>  
+  
+    <section class="page-bottom stack column">
+
+      <menu class="stack">
+        <li>
+          <a class="button" href="#" onclick="this.value=check('select','manage');return false;">
+            {L_SELECT_ALL}
+          </a>
+        </li>
+        <li>
+          <a class="button" href="#" onclick="this.value=check('unselect','manage');return false;">
+            {L_USELECT_ALL}
+          </a>
+        </li>
+      </menu>
+      <menu class="stack">
+        {S_HIDDEN_FIELDS}
+        <!-- BEGIN switch_delete -->
+                  <li>
+                    <input class="button" type="submit" name="delete" value="{L_DELETE}" />
+                  </li>
+                  <!-- END switch_delete -->
+                  <li>
+                    <input class="button" type="submit" name="trash" value="{L_TRASH}"/>
+                  </li>
+                  <li>
+                    <input class="button" type="submit" name="move" value="{L_MOVE}" />
+                  </li>
+                  <li>
+                    <input class="button" type="submit" name="lock" value="{L_LOCK}" />
+                  </li>
+                  <li>
+                    <input class="button" type="submit" name="unlock" value="{L_UNLOCK}" />
+                  </li>
+                  <li>
+                    <!-- BEGIN switch_sticky -->
+                    <input class="button" type="submit" name="sticky" value="{L_STICKY}" />
+                    <!-- END switch_sticky -->
+                  </li>
+                  <li>
+                    <!-- BEGIN switch_announce -->
+                    <input class="button" type="submit" name="announce" value="{L_ANNOUNCE}" />
+                    <!-- END switch_announce -->
+                  </li>
+                  <li>
+                    <!-- BEGIN switch_normal -->
+                    <input class="button" type="submit" name="normal" value="{L_NORMAL}" />
+                    <!-- END switch_normal -->
+                  </li>
+		</menu>
+    </section>
+
+
+</form>
+</main>
