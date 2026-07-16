@@ -1,0 +1,119 @@
+<hgroup class="has-spacing">
+  <i data-lucide="vote"></i>
+  <h3 class="page-subtitle">{L_ADD_A_POLL}</h3>
+</hgroup>
+<section class="stack column has-spacing">
+<menu class="stack column">
+  <li class="form-control column">
+    <label>{L_POLL_QUESTION}</label>
+    <input type="text" name="poll_title" maxlength="255" value="{POLL_TITLE}" />
+  </li>
+  <!-- BEGIN poll_option_textarea -->
+  <li class="form-control column">
+    <label>{L_POLL_OPTION}</label>
+    <span class="explanation">{L_POLL_QUESTION_EXPLAIN}</span>
+    <textarea name="poll_option_text" rows="{POLL_OPTION_NUMBER}" cols="40">{POLL_OPTIONS}</textarea>
+    
+  </li>
+  <!-- END poll_option_textarea -->
+  <!-- BEGIN poll_option_rows -->
+  <li class="form-control column">
+    <label>{L_POLL_OPTION} {poll_option_rows.S_POLL_OPTION_NUM_AFFICHE}</label>
+    <input type="text" name="poll_option_text[{poll_option_rows.S_POLL_OPTION_NUM}]" maxlength="255" value="{poll_option_rows.POLL_OPTION}" />
+    <input type="submit" name="del_poll_option[{poll_option_rows.S_POLL_OPTION_NUM}]" value="{L_DELETE_OPTION}" class="button" />
+  </li>
+  <!-- END poll_option_rows -->
+  <!-- BEGIN poll_option_new -->
+  <li class="form-control column">
+    <label>{L_POLL_OPTION} n&deg;1</label>
+    <input type="text" name="poll_option_text[0]" class="inputbox" maxlength="255" value="" />
+  </li>
+  <!-- END poll_option_new -->
+  	<!-- BEGIN poll_option_more -->
+	<li class="form-control column">
+<label>{L_POLL_OPTION}</label>
+			<input type="text" name="add_poll_option_text" maxlength="255" value="{ADD_POLL_OPTION}" />
+			<input type="submit" name="add_poll_option" value="{L_ADD_OPTION}" class="button" />
+	</li>
+	<!-- END poll_option_more -->
+  <li class="form-control column">
+    <label>{L_POLL_LENGTH}</label>
+    <span class="explanation">{L_POLL_LENGTH_EXPLAIN}</span>
+    <input type="text" name="poll_length" maxlength="3" value="{POLL_LENGTH}" />
+  </li>
+</menu>
+  <section class="grid-2">
+<menu class="form-control column">
+  <label>{L_POLL_MULTIPLE}</label>
+  <li class="form-control">
+    <input type="radio" name="poll_multiple" value="1" {POLL_MULTIPLE_CHECKED} /> 
+    <label>{L_YES}</label>
+  </li>
+  <li class="form-control">
+    <input type="radio" name="poll_multiple" value="0" {POLL_MULTIPLE_UNCHECKED} /> 
+    <label>{L_NO}</label>
+  </li>
+</menu>
+<menu class="form-control column">
+  <li><label>{L_POLL_CANCEL_VOTE}</label></li>
+  <li class="form-control">
+    <input type="radio" name="poll_cancel_vote" value="1"{POLL_CANCEL_VOTE_AUTHORIZED_STATUS} /> 
+     <label>{L_YES}</label>
+  </li>
+  <li class="form-control">
+    <input type="radio" name="poll_cancel_vote" value="0"{POLL_CANCEL_VOTE_UNAUTHORIZED_STATUS} /> 
+     <label>{L_NO}</label>
+  </li>
+</menu>
+<!-- BEGIN switch_poll_public -->
+<menu class="form-control column">
+  <li><label>{switch_poll_public.L_POLL_DISPLAY_MEMBERS}</label></li>
+  <li class="form-control">
+    <input type="radio" name="poll_public_members" value="1"{switch_poll_public.POLL_DISPLAY_MEMBERS_CHECK} />
+    <label>{L_YES}</label>
+  </li>
+  <li class="form-control">
+    <input type="radio" name="poll_public_members" value="0"{switch_poll_public.POLL_DISPLAY_MEMBERS_UNCHECK} /> 
+    <label>{L_NO}</label>
+  </li>
+</menu>
+<!-- BEGIN switch_poll_whovoted -->
+<menu class="form-control column">
+  <li><label>{switch_poll_public.switch_poll_whovoted.L_POLL_DISPLAY_WHOVOTED}</label></li>
+  <li class="form-control">
+    <input type="radio" name="poll_public_whovoted" value="2"{switch_poll_public.switch_poll_whovoted.POLL_DISPLAY_WHOVOTED_CHECK_TIME} /> 
+    <label>{switch_poll_public.switch_poll_whovoted.L_TIMED_REVEAL}</label>
+  </li>
+  <li class="form-control">
+    <input type="radio" name="poll_public_whovoted" value="1"{switch_poll_public.switch_poll_whovoted.POLL_DISPLAY_WHOVOTED_CHECK} />
+    <label>{L_YES}</label>
+  </li>
+   <li class="form-control">
+     <input type="radio" name="poll_public_whovoted" value="0"{switch_poll_public.switch_poll_whovoted.POLL_DISPLAY_WHOVOTED_UNCHECK} />
+     <label>{L_NO}</label>
+  </li>
+</menu>
+<!-- END switch_poll_whovoted -->
+	<!-- END switch_poll_public -->
+<!-- BEGIN switch_poll_hide_result -->
+<menu class="form-control column">
+  <li><label>{L_POLL_HIDE_RESULT}</label></li>
+  <li class="form-control">
+    <input type="radio" name="poll_hide_result" value="1"{POLL_HIDE_RESULT_CHECKED} />
+    <label>{L_YES}</label>
+  </li>
+  <li class="form-control">
+    <input type="radio" name="poll_hide_result" value="0"{POLL_HIDE_RESULT_UNCHECKED} />
+    <label>{L_NO}</label>
+  </li>
+</menu>
+<!-- END switch_poll_hide_result -->
+<!-- BEGIN switch_poll_delete_toggle -->
+	<menu class="form-control column">>
+		<li><label>{L_POLL_DELETE}</label></li>
+		<li class="form-control"><input type="checkbox" name="poll_delete" /> BORRAR</li>
+	</menu>
+	<!-- END switch_poll_delete_toggle -->
+  </section>
+</section>
+	
