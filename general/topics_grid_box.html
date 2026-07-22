@@ -1,1 +1,78 @@
+<!-- BEGIN topics_grid_box -->
+<!-- BEGIN row -->
+<!-- BEGIN header_table -->
+<section class="topiclist grid announcement">
 
+    <h2 class="topiclist-title has-spacing">
+      {topics_grid_box.row.L_TITLE}
+    </h2>
+
+    <section class="stack column has-spacing">
+        <!-- END header_table -->
+
+        <!-- BEGIN header_row -->
+        <strong>{topics_list_box.row.L_TITLE}</strong>
+        <!-- END header_row -->
+
+        <!-- BEGIN topic -->
+
+        <!-- BEGIN table_sticky -->
+    </section>
+
+</section>
+<section class="topiclist grid">
+
+    <h2 class="topiclist-title has-spacing">
+
+        {topics_grid_box.row.topic.table_sticky.L_TITLE}
+    </h2>
+
+    <section class="stack grid-3 has-spacing">
+        <!-- END table_sticky -->
+
+        <article class="topic" status="{topics_grid_box.row.L_TOPIC_FOLDER_ALT}" read="{topics_grid_box.row.TOPIC_READ_STATUS}">
+            <!-- BEGIN single_selection -->
+          <input type="radio" name="{topics_grid_box.FIELDNAME}" value="{topics_grid_box.row.FID}" {topics_grid_box.row.L_SELECT} />
+            <!-- END single_selection -->
+            <figure class="icon">
+                <img src="{topics_grid_box.row.TOPIC_FOLDER_IMG}" />
+            </figure>
+          <figure class="card-hero">
+            {topics_grid_box.row.TOPIC_AUTHOR_AVATAR}
+          </figure>
+            <span class="topic-type">{topics_grid_box.row.TOPIC_TYPE}</span>
+            <a class="title" href="{topics_list_box.row.U_VIEW_TOPIC}">{topics_grid_box.row.TOPIC_TITLE}</a>
+            <span class="author username">{topics_grid_box.row.L_CREATED_ON_BY}</span>
+            <menu class="data">
+                <li class="form-control">{topics_grid_box.row.REPLIES}<span>{L_REPLIES}</span></li>
+                <li class="form-control">{topics_grid_box.row.VIEWS}<span>{L_VIEWS}</span></li>
+            </menu>
+            <section class="lastpost">
+                <!-- BEGIN avatar -->
+                <figure class="avatar-lastpost-topic">
+                    {topics_grid_box.row.topic.avatar.LAST_POST_AVATAR}
+                </figure>
+                <!-- END avatar -->
+                <menu class="stack column">
+                    <li class="username">{topics_grid_box.row.LAST_POST_AUTHOR}</li>
+                    <li class="date">{topics_grid_box.row.LAST_POST_TIME}</li>
+                </menu>
+                {topics_grid_box.row.LAST_POST_IMG}
+            </section>
+        </article>
+        <!-- END topic -->
+        <!-- BEGIN no_topics -->
+        <article class="alert info">
+            <i data-lucide="info"></i>
+            {topics_grid_box.row.L_NO_TOPICS}
+        </article>
+        <!-- END no_topics -->
+
+        <!-- BEGIN bottom -->
+    </section>
+
+</section>
+<!-- END bottom -->
+
+<!-- END row -->
+<!-- END topics_grid_box -->
